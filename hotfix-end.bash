@@ -7,7 +7,10 @@ DIE() {
     local type="$1"
     local msg="$2"
     echo "$progname: $type: $msg"
-    exit 1
+    case "$type" in
+        error) exit 1 ;;
+        info | warning) exit 0 ;;
+    esac
 }
 
 Main() {
