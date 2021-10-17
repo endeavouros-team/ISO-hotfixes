@@ -1,13 +1,12 @@
 #!/bin/bash
 #
-# Hotfixes for the ISOs that can be used after releaseing the ISO.
+# Hotfixes for the ISOs that can be used after releasing the ISO.
 # This file is meant for fixes that need to be done before starting calamares.
 
-DIE() {
+MSG() {
     local type="$1"
     local msg="$2"
-    echo "$progname: $type: $msg"
-    exit 1
+    echo "==> $progname: $type: $msg"
 }
 
 Main() {
@@ -19,14 +18,14 @@ Main() {
 
     case "$VERSION" in
         "2021.08.27")
-            echo "$progname: adding hotfixes after ISO $VERSION."
+            MSG info "hotfixes after ISO $VERSION."
             # Add hotfixes here.
             ;;
 
-        "") DIE warning "sorry, ISO version not found."
+        "") MSG warning "sorry, ISO version not found."
             ;;
 
-        *)  DIE info "no hotfixes for ISO version $VERSION."
+        *)  MSG info "no hotfixes found for ISO version $VERSION."
             ;;
     esac
 }
