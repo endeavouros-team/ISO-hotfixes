@@ -5,46 +5,56 @@
 
 HotMsg() {
     local msg="$1"
-    echo "==> $progname: $msg"
+    local type="$2"
+    [ -n "$type" ] || type=info
+    echo "==> $progname: $type: $msg"
+}
+
+IsoVersion() {
+    local VERSION=""
+    local file=/usr/lib/endeavouros-release
+    LANG=C source $file || return
+    echo "$VERSION"
+}
+
+Hotfix_sway_ly() {
+    case "$DE" in
+        SWAY)
+            if ! pacman -Q ly >& /dev/null ; then
+                HotMsg "sway: installing ly"
+                pacman -Syu --needed --noconfirm ly
+            fi
+            HotMsg "sway: enabling ly service"
+            systemctl --force enable ly
+            ;;
+    esac
 }
 
 Main() {
-    local progname=$(basename "$0")
+    local progname="$(basename "$0")"
     source /usr/share/endeavouros/scripts/eos-script-lib-yad || return 1
-    local file=/usr/lib/endeavouros-release
-    local VERSION=""
+    local ISO_VERSION="$(IsoVersion)"
     local DE="$(eos_GetDeOrWm)"
 
-    [ -r $file ] && source $file
-
     # Add hotfixes below:
-    # - For ISO version specific hotfixes: use the $VERSION variable.
+    # - For ISO version specific hotfixes: use the $ISO_VERSION variable.
     # - For DE/WM specific hotfixes: use the $DE variable (all upper case letters).
     # - Make sure execution does NOT stop (e.g. to ask a password) nor EXIT!
 
-    case "$VERSION" in
-        "")
-            HotMsg "warning: ISO version not found."
-            ;;
+    case "$ISO_VERSION" in
         2021.08.27)
-            HotMsg "hotfixes after ISO $VERSION."
+            HotMsg "hotfixes after ISO $ISO_VERSION."
             # Add hotfixes here.
             ;;
-        2021.10.31 | 2021.11.*)
-            HotMsg "hotfixes after ISO $VERSION."
-            case "$DE" in
-                SWAY)
-                    if ! pacman -Q ly >&/dev/null ; then
-                        HotMsg "sway: installing ly"
-                        pacman -Syu --needed --noconfirm ly
-                    fi
-                    HotMsg "sway: enabling ly service"
-                    systemctl --force enable ly
-                    ;;
-            esac
+        2021.11.*)
+            HotMsg "hotfixes after ISO $ISO_VERSION."
+            Hotfix_sway_ly
+            ;;
+        "")
+            HotMsg "ISO version not found." warning
             ;;
         *)
-            HotMsg "no hotfixes for ISO version $VERSION."
+            HotMsg "no hotfixes for ISO version $ISO_VERSION."
             ;;
     esac
 }
