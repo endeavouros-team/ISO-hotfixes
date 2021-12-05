@@ -3,38 +3,72 @@
 # Hotfixes for the ISOs that can be used after releasing the ISO.
 # This file is meant for fixes that need to be done before starting calamares.
 
-HotMsg() {
-    local msg="$1"
-    echo "==> $progname: $msg"
-}
-
 Main() {
     local progname=$(basename "$0")
     source /usr/share/endeavouros/scripts/eos-script-lib-yad || return 1
-    local file=/usr/lib/endeavouros-release
-    local VERSION=""
+    local ISO_VERSION="$(IsoVersion)"
     local DE="$(eos_GetDeOrWm)"
 
-    [ -r $file ] && source $file
-
     # Add hotfixes below:
-    # - For ISO version specific hotfixes: use the $VERSION variable.
+    # - For ISO version specific hotfixes: use the $ISO_VERSION variable.
     # - For DE/WM specific hotfixes: use the $DE variable (all upper case letter).
     # - Make sure execution does NOT stop (e.g. to ask a password) nor EXIT!
 
-    case "$VERSION" in
-        "")
-            HotMsg "warning: ISO version not found."
+    case "$ISO_VERSION" in
+        2021.12.*)  # also Atlantis 2021.11.30
+            HotMsg "hotfixes after ISO $ISO_VERSION"
+            Atlantis_fix_update-mirrorlist
             ;;
-        2021.08.27)
-            HotMsg "hotfixes after ISO $VERSION."
-            # Add hotfixes here.
+        "")
+            HotMsg "ISO version not found." warning
             ;;
         *)
-            HotMsg "no hotfixes for ISO version $VERSION."
+            HotMsg "no hotfixes for ISO version $ISO_VERSION."
             ;;
     esac
 }
 
+Atlantis_fix_update-mirrorlist() {
+    if IsPackageVersion calamares_current 3.2.47-5 ; then
+        if eos-connection-checker ; then
+            local remote="https://gitlab.com/endeavouros-filemirror/EndeavourOS-calamares/raw/main/calamares/scripts/update-mirrorlist"
+            local local="/etc/calamares/scripts/update-mirrorlist"
+            FetchFile "$remote" "$local"
+        else
+            HotMsg "$FUNCNAME: no internet connection!" warning
+        fi
+    fi
+    return 0
+}
+
+#### Common services:
+
+HotMsg() {
+    local msg="$1"
+    local type="$2"
+    [ -n "$type" ] || type=info
+    echo "==> $progname: $type: $msg"
+}
+
+IsoVersion() {
+    local VERSION=""
+    local file=/usr/lib/endeavouros-release
+    LANG=C source $file || return
+    echo "$VERSION"
+}
+
+IsPackageVersion() {
+    local pkgname="$1"
+    local version="$2"
+    [ "$(pacman -Q $pkgname | awk '{print $2}')" = "$version" ] && return 0 || return 1
+}
+
+FetchFile() {
+    local remote="$1"
+    local local="$2"
+    curl --fail -Lsm 60 -o "$local" "$remote" || HotMsg "fetching new '$local' failed" warning
+}
+
+#### Execution starts here
 Main "$@"
 
