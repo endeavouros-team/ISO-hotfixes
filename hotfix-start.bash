@@ -31,7 +31,7 @@ Main() {
 Atlantis_fix_update-mirrorlist() {
     if IsPackageVersion calamares_current 3.2.47-5 ; then
         if eos-connection-checker ; then
-            local remote="https://gitlab.com/endeavouros-filemirror/EndeavourOS-calamares/raw/main/calamares/scripts/update-mirrorlist"
+            local remote="$(eos-github2gitlab "https://github.com/endeavouros-team/EndeavourOS-calamares/raw/main/calamares/scripts/update-mirrorlist")"
             local local="/etc/calamares/scripts/update-mirrorlist"
             FetchFile "$remote" "$local"
         else
