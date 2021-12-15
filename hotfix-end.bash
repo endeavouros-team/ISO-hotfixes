@@ -15,7 +15,7 @@ Main() {
     # - Make sure execution does NOT stop (e.g. to ask a password) nor EXIT!
 
     case "$ISO_VERSION" in
-        2021.11.30)  # Atlantis
+        2021.11.30 | 2021.12.*)  # for "Atlantis" and "Atlantis neo"
             HotMsg "hotfixes after ISO $ISO_VERSION."
             Hotfix_sway_ly
             ;;
