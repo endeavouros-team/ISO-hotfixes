@@ -33,7 +33,7 @@ Hotfix_sway_ly() {
         SWAY)
             if ! pacman -Q ly >& /dev/null ; then
                 HotMsg "sway: installing ly"
-                pacman -Syu --needed --noconfirm ly
+                pacman -Syu --needed --noconfirm ly ttf-nerd-fonts-symbols
             fi
             HotMsg "sway: enabling ly service"
             systemctl --force enable ly
