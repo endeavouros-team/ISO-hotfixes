@@ -75,7 +75,7 @@ FetchFile() {
 Update_packages() {  # parameters: package names
     local pkg pkgs=()
     for pkg in "$@" ; do
-        if ! pacman -Q $pkg  >& /dev/null ; then
+        if pacman -Q $pkg  >& /dev/null ; then
             pkgs+=("$pkg")
         fi
     done
