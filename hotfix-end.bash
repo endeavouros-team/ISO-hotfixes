@@ -20,7 +20,10 @@ Main() {
             Hotfix_sway_ly
             case "$ISO_VERSION" in
                 2021.12.*)  # Atlantis neo
-                    [ "$DE" = "SWAY" ] && Install_packages calamares_config_ce
+                    if [ "$DE" = "SWAY" ] ; then
+                        Remove_packages otf-font-awesome
+                        Install_packages awesome-terminal-fonts calamares_config_ce
+                    fi
                     ;;
             esac
             ;;
