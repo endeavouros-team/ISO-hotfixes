@@ -18,15 +18,6 @@ Main() {
         2021.11.30 | 2021.12.*)  # for "Atlantis" and "Atlantis neo"
             HotMsg "hotfixes after ISO $ISO_VERSION."
             Hotfix_sway_ly
-            case "$ISO_VERSION" in
-                2021.12.*)  # Atlantis neo
-                    if [ "$DE" = "SWAY" ] ; then
-                        :
-                        #Remove_packages otf-font-awesome
-                        #Install_packages awesome-terminal-fonts # calamares_config_ce
-                    fi
-                    ;;
-            esac
             ;;
         "")
             HotMsg "ISO version not found." warning
