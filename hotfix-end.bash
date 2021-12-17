@@ -18,6 +18,11 @@ Main() {
         2021.11.30 | 2021.12.*)  # for "Atlantis" and "Atlantis neo"
             HotMsg "hotfixes after ISO $ISO_VERSION."
             Hotfix_sway_ly
+            case "$ISO_VERSION" in
+                2021.12.*)  # Atlantis neo
+                    [ "$DE" = "SWAY" ] && Install_packages calamares_config_ce
+                    ;;
+            esac
             ;;
         "")
             HotMsg "ISO version not found." warning
@@ -31,10 +36,7 @@ Main() {
 Hotfix_sway_ly() {
     case "$DE" in
         SWAY)
-            if ! pacman -Q ly >& /dev/null ; then
-                HotMsg "sway: installing ly"
-                pacman -Syu --needed --noconfirm ly
-            fi
+            Install_packages ly
             HotMsg "sway: enabling ly service"
             systemctl --force enable ly
             ;;
@@ -67,6 +69,32 @@ FetchFile() {
     local remote="$1"
     local local="$2"
     curl --fail -Lsm 60 -o "$local" "$remote" || HotMsg "fetching new '$local' failed" warning
+}
+
+Install_packages() {  # parameters: package names
+    local pkg pkgs=()
+    for pkg in "$@" ; do
+        if ! pacman -Q $pkg  >& /dev/null ; then
+            pkgs+=("$pkg")
+        fi
+    done
+    if [ -n "$pkgs" ] ; then
+        HotMsg "$DE: installing ${pkgs[*]}"
+        pacman -Syu --noconfirm "${pkgs[@]}"
+    fi
+}
+
+Remove_packages() {  # parameters: package names
+    local pkg pkgs=()
+    for pkg in "$@" ; do
+        if pacman -Q $pkg  >& /dev/null ; then
+            pkgs+=("$pkg")
+        fi
+    done
+    if [ -n "$pkgs" ] ; then
+        HotMsg "$DE: uninstalling ${pkgs[*]}"
+        pacman -R --noconfirm "${pkgs[@]}"
+    fi
 }
 
 #### Execution starts here

@@ -15,7 +15,7 @@ Main() {
     # - Make sure execution does NOT stop (e.g. to ask a password) nor EXIT!
 
     case "$ISO_VERSION" in
-        2021.12.*)  # also Atlantis 2021.11.30
+        2021.11.30)  # Atlantis 2021.11.30
             HotMsg "hotfixes after ISO $ISO_VERSION"
             Atlantis_fix_update-mirrorlist
             ;;
