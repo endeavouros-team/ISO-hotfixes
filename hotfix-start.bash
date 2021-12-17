@@ -19,6 +19,9 @@ Main() {
             HotMsg "hotfixes after ISO $ISO_VERSION"
             Atlantis_fix_update-mirrorlist
             ;;
+        2021.12.*)  # Atlantis neo
+            Update_packages calamares_config_ce
+            ;;
         "")
             HotMsg "ISO version not found." warning
             ;;
@@ -67,6 +70,19 @@ FetchFile() {
     local remote="$1"
     local local="$2"
     curl --fail -Lsm 60 -o "$local" "$remote" || HotMsg "fetching new '$local' failed" warning
+}
+
+Update_packages() {  # parameters: package names
+    local pkg pkgs=()
+    for pkg in "$@" ; do
+        if ! pacman -Q $pkg  >& /dev/null ; then
+            pkgs+=("$pkg")
+        fi
+    done
+    if [ -n "$pkgs" ] ; then
+        HotMsg "$DE: updating ${pkgs[*]}"
+        pacman -Sy --noconfirm "${pkgs[@]}"
+    fi
 }
 
 #### Execution starts here

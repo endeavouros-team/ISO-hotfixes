@@ -21,8 +21,9 @@ Main() {
             case "$ISO_VERSION" in
                 2021.12.*)  # Atlantis neo
                     if [ "$DE" = "SWAY" ] ; then
-                        Remove_packages otf-font-awesome
-                        Install_packages awesome-terminal-fonts calamares_config_ce
+                        :
+                        #Remove_packages otf-font-awesome
+                        #Install_packages awesome-terminal-fonts # calamares_config_ce
                     fi
                     ;;
             esac
