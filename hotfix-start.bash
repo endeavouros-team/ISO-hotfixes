@@ -45,10 +45,22 @@ Atlantis_fix_update-mirrorlist() {
     return 0
 }
 Atlantis_fix_installer_start() {
-    sudo sed \
-         -i /usr/bin/eos-install-mode-run-calamares \
-         -e 's|workdir 2>/dev/null|workdir >/dev/null|' \
-         -e 's|popd 2>/dev/null|popd >/dev/null|'
+    local file=/usr/bin/eos-install-mode-run-calamares
+    if [ -n "$(grep "workdir 2>/dev/null" $file)" ] ; then
+        sudo sed \
+             -i $file \
+             -e 's|workdir 2>/dev/null|workdir >/dev/null|' \
+             -e 's|popd 2>/dev/null|popd >/dev/null|'
+
+        local icon==/usr/share/endeavouros/EndeavourOS-icon.png
+        local txt=""
+        txt+="Currently the <b>Atlantis</b> release requires clicking the install button a second time\n"
+        txt+="in order to actually start the install process.\n\n"
+        txt+="Users are advised to download the <b>Atlantis neo</b> release\n"
+        txt+="where this issue is already fixed.\n\n"
+        txt+="Sorry for the inconvenience.\n"
+        yad --form --window-icon=$icon --image=dialog-information --button=yad-quit --title="Hotfix information" --text="$txt"
+    fi
 }
 
 #### Common services:
