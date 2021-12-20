@@ -18,6 +18,7 @@ Main() {
         2021.11.30)  # Atlantis 2021.11.30
             HotMsg "hotfixes after ISO $ISO_VERSION"
             Atlantis_fix_update-mirrorlist
+            Atlantis_fix_installer_start
             ;;
         2021.12.*)  # Atlantis neo
             Update_packages calamares_config_ce
@@ -42,6 +43,12 @@ Atlantis_fix_update-mirrorlist() {
         fi
     fi
     return 0
+}
+Atlantis_fix_installer_start() {
+    sudo sed \
+         -i /usr/bin/eos-install-mode-run-calamares \
+         -e 's|workdir 2>/dev/null|workdir >/dev/null|' \
+         -e 's|popd 2>/dev/null|popd >/dev/null|'
 }
 
 #### Common services:
