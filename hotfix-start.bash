@@ -59,7 +59,7 @@ Atlantis_fix_installer_start() {
         txt+="Users are advised to download the <b>Atlantis neo</b> release\n"
         txt+="where this issue is already fixed.\n\n"
         txt+="Sorry for the inconvenience.\n"
-        yad --form --window-icon=$icon --image=dialog-information --button=yad-quit --title="Hotfix information" --text="$txt"
+        eos_yad --form --image=dialog-information --button=yad-quit --title="Hotfix information" --text="$txt"
     fi
 }
 
