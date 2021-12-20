@@ -69,7 +69,13 @@ IsPackageVersion() {
 FetchFile() {
     local remote="$1"
     local local="$2"
-    curl --fail -Lsm 60 -o "$local" "$remote" || HotMsg "fetching new '$local' failed" warning
+    local localtmp=$(mktemp)
+    if curl --fail -Lsm 60 -o "$localtmp" "$remote" ; then
+        sudo cp $localtmp "$local"
+    else
+        HotMsg "fetching new '$local' failed" warning
+    fi
+    rm $localtmp
 }
 
 Update_packages() {  # parameters: package names
