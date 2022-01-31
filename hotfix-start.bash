@@ -21,7 +21,16 @@ Main() {
             Atlantis_fix_installer_start
             ;;
         2021.12.*)  # Atlantis neo
+            HotMsg "hotfixes after ISO $ISO_VERSION"
             Update_packages calamares_config_ce calamares_config_default
+
+            # Remove autodefrag. It can be first, last, or the only item on the line.
+            if [ -r /etc/calamares/modules/fstab.conf ] ; then
+                sed -i /etc/calamares/modules/fstab.conf \
+                    -e 's|^\([ ]*btrfs: .*\)autodefrag,\(.*\)|\1\2|' \
+                    -e 's|^\([ ]*btrfs: .*\),autodefrag\(.*\)|\1\2|' \
+                    -e 's|^\([ ]*btrfs: .*\)autodefrag\(.*\)|\1\2|'
+            fi
             ;;
         "")
             HotMsg "ISO version not found." warning
