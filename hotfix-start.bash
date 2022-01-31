@@ -21,7 +21,7 @@ Main() {
             Atlantis_fix_installer_start
             ;;
         2021.12.*)  # Atlantis neo
-            Update_packages calamares_config_ce
+            Update_packages calamares_config_ce calamares_config_default
             ;;
         "")
             HotMsg "ISO version not found." warning
