@@ -22,7 +22,7 @@ Main() {
             ;;
         2021.12.*)  # Atlantis neo
             HotMsg "hotfixes after ISO $ISO_VERSION"
-            Update_packages calamares_config_ce calamares_config_default
+            # Update_packages calamares_config_ce calamares_config_default
             ;;
         "")
             HotMsg "ISO version not found." warning
