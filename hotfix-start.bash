@@ -22,6 +22,7 @@ Main() {
             ;;
         2021.12.*)  # Atlantis neo
             HotMsg "hotfixes after ISO $ISO_VERSION"
+            Atlantis_neo_fix
             # Update_packages calamares_config_ce calamares_config_default
             ;;
         "")
@@ -31,6 +32,29 @@ Main() {
             HotMsg "no hotfixes for ISO version $ISO_VERSION."
             ;;
     esac
+}
+
+Atlantis_neo_fix() {
+    if ! eos-connection-checker ; then
+        HotMsg "$FUNCNAME: no internet connection!" warning
+        return   # fail
+    fi
+
+    # Swap lines of /etc/calamares/settings_community.conf:
+    #   - contextualprocess
+    #   - packages@online
+
+    local file=/etc/calamares/settings_community.conf
+    local file2=$file.tmp123
+    mv $file $file2
+    grep -Pv 'contextualprocess|packages@online' $file2 | sed '/user_pkglist/i \  - packages@online\n  - contextualprocess' > $file
+    rm -f $file2
+
+    # Fix netinstall*.yaml for community editions by removing the https URLs
+    file=https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-calamares/Atlantis_neo/calamares/modules/netinstall_community-base.conf
+    sed -i $file -e 's|^\( - https://.*\)| # \1|'
+    file=https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-calamares/Atlantis_neo/calamares/modules/netinstall.conf
+    sed -i $file -e 's|^\( - https://.*\)| # \1|'
 }
 
 Atlantis_fix_update-mirrorlist() {
