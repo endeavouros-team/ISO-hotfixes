@@ -18,6 +18,7 @@ Main() {
         2021.11.30 | 2021.12.*)  # for "Atlantis" and "Atlantis neo"
             HotMsg "hotfixes after ISO $ISO_VERSION."
             Hotfix_sway_ly
+            Remove_packages pcurses
             ;;
         "")
             HotMsg "ISO version not found." warning
