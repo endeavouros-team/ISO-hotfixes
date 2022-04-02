@@ -62,8 +62,9 @@ Atlantis_neo_fix() {
     sed -i /etc/calamares/modules/netinstall.conf                  -e '/gitlab/d'
     sed -i /etc/calamares/modules/netinstall_community-base.conf   -e '/gitlab/d'
 
-    # fix missing icons in Xfce panel
-    sed -i /etc/calamares/modules/netinstall.yaml                  -e 's|^\(     [ ]*\)- arc-x-icons-theme$|\1- eos-qogir-icons|'
+    # fix missing icons in Xfce panel and i3
+    sed -i /etc/calamares/modules/netinstall.yaml   -e 's|^\(     [ ]*\)- arc-x-icons-theme$|\1- eos-qogir-icons|'
+    sed -i /etc/calamares/modules/netinstall.yaml   -e '338s|arc-x-icons-theme|eos-qogir-icons|'
 }
 
 Atlantis_fix_update-mirrorlist() {
