@@ -55,6 +55,12 @@ Atlantis_neo_fix() {
     sed -i $file -e 's|^\( - https://.*\)| # \1|'
     file=https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-calamares/Atlantis_neo/calamares/modules/netinstall.conf
     sed -i $file -e 's|^\( - https://.*\)| # \1|'
+
+    # fix pcurses
+    sed -i /etc/calamares/modules/netinstall.yaml                  -e '/pcurses$/d'
+    sed -i /etc/calamares/modules/netinstall-ce-base.yaml          -e '/pcurses$/d'
+    sed -i /etc/calamares/modules/netinstall.conf                  -e '/gitlab/d'
+    sed -i /etc/calamares/modules/netinstall_community-base.conf   -e '/gitlab/d'
 }
 
 Atlantis_fix_update-mirrorlist() {
