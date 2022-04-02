@@ -64,7 +64,7 @@ Atlantis_neo_fix() {
 
     # fix missing icons in Xfce panel and i3
     sed -i /etc/calamares/modules/netinstall.yaml   -e 's|^\(     [ ]*\)- arc-x-icons-theme$|\1- eos-qogir-icons|'
-    sed -i /etc/calamares/modules/netinstall.yaml   -e '338s|arc-x-icons-theme|eos-qogir-icons|'
+    sed -i /etc/calamares/modules/netinstall.yaml   -e '337s|arc-x-icons-theme|eos-qogir-icons|'
 }
 
 Atlantis_fix_update-mirrorlist() {
