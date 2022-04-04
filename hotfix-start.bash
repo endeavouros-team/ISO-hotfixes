@@ -25,6 +25,11 @@ Main() {
             Atlantis_neo_fix
             # Update_packages calamares_config_ce calamares_config_default
             ;;
+        2022.03.30)
+            # remove pcurses
+            sed -i /etc/calamares/modules/netinstall.yaml                  -e '/pcurses$/d'
+            sed -i /etc/calamares/modules/netinstall-ce-base.yaml          -e '/pcurses$/d'
+            ;;
         "")
             HotMsg "ISO version not found." warning
             ;;
