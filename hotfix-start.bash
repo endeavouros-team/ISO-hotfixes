@@ -30,6 +30,9 @@ Main() {
             sed -i /etc/calamares/modules/netinstall.yaml                  -e '/pcurses$/d'
             sed -i /etc/calamares/modules/netinstall-ce-base.yaml          -e '/pcurses$/d'
             ;;
+        2022.04.08)
+            sed -i /etc/calamares/scripts/chrooted_cleaner_script.sh -e 's|\(qt6-base\)|# \1|'
+            ;;
         "")
             HotMsg "ISO version not found." warning
             ;;
@@ -69,7 +72,7 @@ Atlantis_neo_fix() {
 }
 
 Atlantis_fix_update-mirrorlist() {
-    if IsPackageVersion calamares_current 3.2.47-5 ; then
+    if [ "$(PackageVersion calamares_current)" = "3.2.47-5" ] ; then
         if eos-connection-checker ; then
             local remote="$(eos-github2gitlab "https://github.com/endeavouros-team/EndeavourOS-calamares/raw/main/calamares/scripts/update-mirrorlist")"
             local local="/etc/calamares/scripts/update-mirrorlist"
@@ -115,10 +118,9 @@ IsoVersion() {
     echo "$VERSION"
 }
 
-IsPackageVersion() {
+PackageVersion() {
     local pkgname="$1"
-    local version="$2"
-    [ "$(pacman -Q $pkgname | awk '{print $2}')" = "$version" ] && return 0 || return 1
+    pacman -Q "$pkgname" | awk '{print $2}'
 }
 
 FetchFile() {

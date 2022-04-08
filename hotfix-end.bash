@@ -55,10 +55,9 @@ IsoVersion() {
     echo "$VERSION"
 }
 
-IsPackageVersion() {
+PackageVersion() {
     local pkgname="$1"
-    local version="$2"
-    [ "$(pacman -Q $pkgname | awk '{print $2}')" = "$version" ] && return 0 || return 1
+    pacman -Q "$pkgname" | awk '{print $2}'
 }
 
 FetchFile() {
