@@ -31,6 +31,7 @@ Main() {
             sed -i /etc/calamares/modules/netinstall-ce-base.yaml          -e '/pcurses$/d'
             ;;
         2022.04.08)
+            # remove the uninstalling of qt6-base (offline) because eos-quickstart needs it
             sed -i /etc/calamares/scripts/chrooted_cleaner_script.sh -e 's|\(qt6-base\)|# \1|'
             ;;
         "")
