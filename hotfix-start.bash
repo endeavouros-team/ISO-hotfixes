@@ -32,7 +32,9 @@ Main() {
             ;;
         2022.04.08)
             # remove the uninstalling of qt6-base (offline) because eos-quickstart needs it
-            sed -i /etc/calamares/scripts/chrooted_cleaner_script.sh -e 's|\(qt6-base\)|# \1|'
+            sed -i /etc/calamares/scripts/chrooted_cleaner_script.sh \
+                -e 's|\(qt6-base\)|# \1|' \
+                -e 's|^rm -R /etc/calamares /opt/extra-drivers|rm -rf /etc/calamares /opt/extra-drivers|'
             ;;
         "")
             HotMsg "ISO version not found." warning
