@@ -30,11 +30,19 @@ Main() {
             sed -i /etc/calamares/modules/netinstall.yaml                  -e '/pcurses$/d'
             sed -i /etc/calamares/modules/netinstall-ce-base.yaml          -e '/pcurses$/d'
             ;;
-        2022.04.08)
-            # remove the uninstalling of qt6-base (offline) because eos-quickstart needs it
+        2022.04.08)  # Apollo
+            HotMsg "hotfixes after ISO $ISO_VERSION"
+
+            HotMsg "remove the uninstalling of qt6-base (in offline install) because eos-quickstart needs it"
             sed -i /etc/calamares/scripts/chrooted_cleaner_script.sh \
                 -e 's|\(qt6-base\)|# \1|' \
                 -e 's|^rm -R /etc/calamares /opt/extra-drivers|rm -rf /etc/calamares /opt/extra-drivers|'
+
+            if eos-connection-checker ; then
+                HotMsg "fix a keyring issue by installing latest archlinux-keyring before pacstrap"
+                sed -i /etc/calamares/modules/shellprocess_initialize_pacman.conf \
+                    -e '/^script:$/a \ - command: "pacman -Sy --noconfirm archlinux-keyring"'
+            fi
             ;;
         "")
             HotMsg "ISO version not found." warning
