@@ -38,6 +38,7 @@ Main() {
 
             # update Arch keyring
             if eos-connection-checker ; then
+                HotMsg "updating Arch keyring"
                 pacman -Sy archlinux-keyring
             fi
             ;;
