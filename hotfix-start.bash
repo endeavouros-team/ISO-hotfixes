@@ -41,7 +41,7 @@ Main() {
             if eos-connection-checker ; then
                 HotMsg "fix a keyring issue by installing latest archlinux-keyring before pacstrap"
                 sed -i /etc/calamares/modules/shellprocess_initialize_pacman.conf \
-                    -e '/^script:$/a \ - command: "pacman -Sy --noconfirm archlinux-keyring"\n   timeout: 1200'
+                    -e '/^script:$/a \ - command: "pacman -Sy --needed --noconfirm archlinux-keyring"\n   timeout: 1200'
             fi
             ;;
         "")
