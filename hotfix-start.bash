@@ -37,7 +37,9 @@ Main() {
                 -e 's|^rm -R /etc/calamares /opt/extra-drivers|rm -rf /etc/calamares /opt/extra-drivers|'
 
             # update Arch keyring
-            pacman -Sy archlinux-keyring
+            if eos-connection-checker ; then
+                pacman -Sy archlinux-keyring
+            fi
             ;;
         "")
             HotMsg "ISO version not found." warning
