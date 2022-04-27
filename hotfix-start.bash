@@ -35,12 +35,6 @@ Main() {
             sed -i /etc/calamares/scripts/chrooted_cleaner_script.sh \
                 -e 's|\(qt6-base\)|# \1|' \
                 -e 's|^rm -R /etc/calamares /opt/extra-drivers|rm -rf /etc/calamares /opt/extra-drivers|'
-
-            # update Arch keyring
-            if eos-connection-checker ; then
-                HotMsg "updating Arch keyring"
-                pacman -Sy archlinux-keyring
-            fi
             ;;
         "")
             HotMsg "ISO version not found." warning
