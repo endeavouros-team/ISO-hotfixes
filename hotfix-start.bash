@@ -168,8 +168,8 @@ SkipPackageInstall() {
     HotMsg "skip installing package(s): $*"
     local pkg
     for pkg in "$@" ; do
-        sed -i /etc/calamares/modules/netinstall.yaml          -e "/^[ \t]*$pkg$/d"
-        sed -i /etc/calamares/modules/netinstall-ce-base.yaml  -e "/^[ \t]*$pkg$/d"
+        sed -i /etc/calamares/modules/netinstall.yaml          -e "/^[ \t]*-[ ]*$pkg$/d"
+        sed -i /etc/calamares/modules/netinstall-ce-base.yaml  -e "/^[ \t]*-[ ]*$pkg$/d"
     done
 }
 
