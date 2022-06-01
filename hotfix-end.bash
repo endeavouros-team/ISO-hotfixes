@@ -22,6 +22,7 @@ Main() {
             ;;
         2022.04.08)
             HotMsg "hotfixes after ISO $ISO_VERSION."
+            Install_packages endeavouros-keyring
             if [ -n "$(lspci -k | grep "Ethernet controller: Marvell Technology" | grep -w "wireless")" ] ; then
                 Install_packages linux-firmware-marvell
             fi
