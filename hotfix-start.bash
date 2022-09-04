@@ -48,6 +48,12 @@ Main() {
             # package pipewire-media-session is no more available officially
             SkipPackageInstall pipewire-media-session
             ;;
+        2022.08.28)  # Artemis neo (second version with grub fix)
+            HotMsg "hotfixes after ISO $ISO_VERSION"
+
+            # font name change for community editions
+            sed -i /etc/calamares/modules/packagechooser_ce.conf -e 's|\(- ttf-nerd-fonts-symbols\)|\1-2048-em|'
+            ;;
         "")
             HotMsg "ISO version not found." warning
             ;;
