@@ -54,6 +54,13 @@ Main() {
             # font name change for community editions
             sed -i /etc/calamares/modules/packagechooser_ce.conf -e 's|\(- ttf-nerd-fonts-symbols\)|\1-2048-em|'
             ;;
+        2022.09.22)  # Artemis nova
+            HotMsg "hotfixes after ISO $ISO_VERSION"
+
+            # delete removed firmware packages from install lists (ipw2100-fw and ipw2200-fw)
+            sed -i /etc/calamares/modules/netinstall.yaml -e '/ipw2/d'
+            sed -i /etc/calamares/modules/netinstall-ce-base.yaml -e '/ipw2/d'
+            ;;
         "")
             HotMsg "ISO version not found." warning
             ;;
