@@ -61,6 +61,13 @@ Main() {
             sed -i /etc/calamares/modules/netinstall.yaml -e '/ipw2/d'
             sed -i /etc/calamares/modules/netinstall-ce-base.yaml -e '/ipw2/d'
             ;;
+        2022.10.09)  # Artemis nova October rebuild
+            HotMsg "hotfixes after ISO $ISO_VERSION"
+
+            # delete removed firmware packages from install lists (ipw2100-fw and ipw2200-fw)
+            sed -i /etc/calamares/modules/netinstall.yaml -e '/ipw2/d'
+            sed -i /etc/calamares/modules/netinstall-ce-base.yaml -e '/ipw2/d'
+            ;;
         "")
             HotMsg "ISO version not found." warning
             ;;
