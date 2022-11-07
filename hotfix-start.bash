@@ -14,64 +14,46 @@ Main() {
     # - For DE/WM specific hotfixes: use the $DE variable (all upper case letter).
     # - Make sure execution does NOT stop (e.g. to ask a password) nor EXIT!
 
+    if [ -z "$ISO_VERSION" ] ; then
+        HotMsg "ISO version not found!" warning
+        return
+    fi
+
+    HotMsg "hotfixes after ISO $ISO_VERSION"
+
     case "$ISO_VERSION" in
         2021.11.30)  # Atlantis 2021.11.30
-            HotMsg "hotfixes after ISO $ISO_VERSION"
             Atlantis_fix_update-mirrorlist
             Atlantis_fix_installer_start
             ;;
         2021.12.*)  # Atlantis neo
-            HotMsg "hotfixes after ISO $ISO_VERSION"
             Atlantis_neo_fix
             # Update_packages calamares_config_ce calamares_config_default
             ;;
         2022.03.30)
-            # remove pcurses
-            sed -i /etc/calamares/modules/netinstall.yaml                  -e '/pcurses$/d'
-            sed -i /etc/calamares/modules/netinstall-ce-base.yaml          -e '/pcurses$/d'
-            # should use: SkipPackageInstall pcurses
+            SkipPackageInstall pcurses            # remove pcurses
             ;;
         2022.04.08)  # Apollo
-            HotMsg "hotfixes after ISO $ISO_VERSION"
-
             HotMsg "remove the uninstalling of qt6-base (in offline install) because eos-quickstart needs it"
             sed -i /etc/calamares/scripts/chrooted_cleaner_script.sh \
                 -e 's|\(qt6-base\)|# \1|' \
                 -e 's|^rm -R /etc/calamares /opt/extra-drivers|rm -rf /etc/calamares /opt/extra-drivers|'
-
             if eos-connection-checker ; then
                 HotMsg "fix a keyring issue by installing latest archlinux-keyring before pacstrap"
                 sed -i /etc/calamares/modules/shellprocess_initialize_pacman.conf \
                     -e '/^script:$/a \ - command: "pacman -Sy --needed --noconfirm archlinux-keyring"\n   timeout: 1200'
             fi
-
-            # package pipewire-media-session is no more available officially
-            SkipPackageInstall pipewire-media-session
+            SkipPackageInstall pipewire-media-session            # package pipewire-media-session is no more available officially
             ;;
         2022.08.28)  # Artemis neo (second version with grub fix)
-            HotMsg "hotfixes after ISO $ISO_VERSION"
-
             # font name change for community editions
             sed -i /etc/calamares/modules/packagechooser_ce.conf -e 's|\(- ttf-nerd-fonts-symbols\)|\1-2048-em|'
             ;;
         2022.09.10)  # Artemis nova
-            HotMsg "hotfixes after ISO $ISO_VERSION"
-
-            # delete removed firmware packages from install lists (ipw2100-fw and ipw2200-fw)
-            SkipPackageInstall ipw2100-fw ipw2200-fw
-            # sed -i /etc/calamares/modules/netinstall.yaml -e '/ipw2/d'
-            # sed -i /etc/calamares/modules/netinstall-ce-base.yaml -e '/ipw2/d'
+            SkipPackageInstall ipw2100-fw ipw2200-fw            # delete removed firmware packages from install lists (ipw2100-fw and ipw2200-fw)
             ;;
         2022.10.18)  # Artemis nova October rebuild
-            HotMsg "hotfixes after ISO $ISO_VERSION"
-
-            # delete removed firmware packages from install lists (ipw2100-fw and ipw2200-fw)
-            SkipPackageInstall ipw2100-fw ipw2200-fw
-            # sed -i /etc/calamares/modules/netinstall.yaml -e '/ipw2/d'
-            # sed -i /etc/calamares/modules/netinstall-ce-base.yaml -e '/ipw2/d'
-            ;;
-        "")
-            HotMsg "ISO version not found." warning
+            SkipPackageInstall ipw2100-fw ipw2200-fw            # delete removed firmware packages from install lists (ipw2100-fw and ipw2200-fw)
             ;;
         *)
             HotMsg "no hotfixes for ISO version $ISO_VERSION."
