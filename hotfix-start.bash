@@ -51,6 +51,8 @@ Main() {
             ;;
         2022.09.10)  # Artemis nova
             SkipPackageInstall ipw2100-fw ipw2200-fw            # delete removed firmware packages from install lists (ipw2100-fw and ipw2200-fw)
+            # exchange nitrogen with feh for i3 installs
+            sed -i 's/    - nitrogen/    - feh/g' /etc/calamares/modules/netinstall.yaml
             ;;
         2022.10.18)  # Artemis nova October rebuild
             SkipPackageInstall ipw2100-fw ipw2200-fw            # delete removed firmware packages from install lists (ipw2100-fw and ipw2200-fw)
