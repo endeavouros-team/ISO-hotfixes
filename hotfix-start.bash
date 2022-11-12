@@ -53,6 +53,9 @@ Main() {
             SkipPackageInstall ipw2100-fw ipw2200-fw            # delete removed firmware packages from install lists (ipw2100-fw and ipw2200-fw)
             # exchange nitrogen with feh for i3 installs
             sed -i 's/    - nitrogen/    - feh/g' /etc/calamares/modules/netinstall.yaml
+            # remove the installing of nvidia-installer-dkms because it no longer exists in the repo
+            sed -i /etc/calamares/scripts/chrooted_cleaner_script.sh \
+                -e 's|_install_needed_packages nvidia-installer-dkms|_install_needed_packages|'
             ;;
         2022.10.18)  # Artemis nova October rebuild
             SkipPackageInstall ipw2100-fw ipw2200-fw            # delete removed firmware packages from install lists (ipw2100-fw and ipw2200-fw)
