@@ -66,6 +66,8 @@ Main() {
             # remove the installing of nvidia-installer-dkms because it no longer exists in the repo
             sed -i /etc/calamares/scripts/chrooted_cleaner_script.sh \
                 -e 's|_install_needed_packages nvidia-installer-dkms|_install_needed_packages|'
+            # remove picom from install list for i3
+            SkipPackageInstall picom
             ;;
         2022.11.13)  # Artemis nova November rebuild
             SkipPackageInstall ipw2100-fw ipw2200-fw            # delete removed firmware packages from install lists (ipw2100-fw and ipw2200-fw)
