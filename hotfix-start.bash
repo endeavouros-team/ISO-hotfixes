@@ -21,6 +21,10 @@ Main() {
 
     HotMsg "hotfixes after ISO $ISO_VERSION"
 
+    # This fix is not needed when Cassini is out.
+    sed -i /etc/calamares/scripts/chrooted_cleaner_script.sh \
+        -e 's|_install_needed_packages nvidia-installer-dkms nvidia-inst |_install_needed_packages nvidia-inst |'
+
     case "$ISO_VERSION" in
         2021.11.30)  # Atlantis 2021.11.30
             Atlantis_fix_update-mirrorlist
