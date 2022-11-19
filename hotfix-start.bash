@@ -21,9 +21,15 @@ Main() {
 
     HotMsg "hotfixes after ISO $ISO_VERSION"
 
-    # This fix is not needed when Cassini is out.
+    # Permanent fixes common to the latest stable ISO and dev ISOs after that.
+
+    # Remove installing of nvidia-installer-dkms.
     sed -i /etc/calamares/scripts/chrooted_cleaner_script.sh \
         -e 's|_install_needed_packages nvidia-installer-dkms nvidia-inst |_install_needed_packages nvidia-inst |'
+    # Delete removed firmware packages from install lists (ipw2100-fw and ipw2200-fw).
+    SkipPackageInstall ipw2100-fw ipw2200-fw
+
+    # ISO specific fixes.
 
     case "$ISO_VERSION" in
         2021.11.30)  # Atlantis 2021.11.30
