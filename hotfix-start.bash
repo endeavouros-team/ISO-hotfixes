@@ -70,12 +70,12 @@ Main() {
             SkipPackageInstall picom
             ;;
         2022.11.13)  # Artemis nova November rebuild
-            SkipPackageInstall ipw2100-fw ipw2200-fw            # delete removed firmware packages from install lists (ipw2100-fw and ipw2200-fw)
+            SkipPackageInstall ipw2100-fw ipw2200-fw grub-tools          # delete removed firmware packages from install lists (ipw2100-fw and ipw2200-fw)
             # remove grub2-theme-endeavouros from pacstrap
             sed '/  - grub2-theme-endeavouros/d' -i /etc/calamares/modules/pacstrap.conf
             ;;
         2022.12.06)  # Artemis nova December rebuild
-            SkipPackageInstall ipw2100-fw ipw2200-fw            # delete removed firmware packages from install lists (ipw2100-fw and ipw2200-fw)
+            SkipPackageInstall ipw2100-fw ipw2200-fw grub-tools           # delete removed firmware packages from install lists (ipw2100-fw and ipw2200-fw)
             # remove grub2-theme-endeavouros from pacstrap
             sed '/  - grub2-theme-endeavouros/d' -i /etc/calamares/modules/pacstrap.conf
             ;;
