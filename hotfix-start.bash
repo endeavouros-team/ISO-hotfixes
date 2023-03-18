@@ -81,6 +81,10 @@ Main() {
             # Delete removed firmware packages from install lists (ipw2100-fw and ipw2200-fw).
             SkipPackageInstall ipw2100-fw ipw2200-fw
             ;;
+        2023.03.06)  # Cassini nova 
+            # [hardwaredetect] Do not return error if hardware detection fails
+            wget -qN -P "/usr/lib/calamares/modules/hardwaredetect/" "https://raw.githubusercontent.com/endeavouros-team/calamares/01aeb60d05c864bacc926f718686c27c69b84f49/src/modules/hardwaredetect/main.py" 
+            ;;
         *)
             HotMsg "no hotfixes for ISO version $ISO_VERSION."
             ;;
