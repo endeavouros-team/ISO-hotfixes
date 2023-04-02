@@ -85,7 +85,7 @@ Main() {
             # [hardwaredetect] Do not return error if hardware detection fails
             wget -qN -P "/usr/lib/calamares/modules/hardwaredetect/" "https://raw.githubusercontent.com/endeavouros-team/calamares/01aeb60d05c864bacc926f718686c27c69b84f49/src/modules/hardwaredetect/main.py" 
             ;;
-        2023.03.27)  # Cassini nova R1 
+        2023.03.26)  # Cassini nova R1 
             # [hardwaredetect] Do not return error if hardware detection fails
             wget -qN -P "/usr/lib/calamares/modules/hardwaredetect/" "https://raw.githubusercontent.com/endeavouros-team/calamares/01aeb60d05c864bacc926f718686c27c69b84f49/src/modules/hardwaredetect/main.py"
             SkipPackageInstallInFile packagechooser_ce.conf xcursor-neutral
