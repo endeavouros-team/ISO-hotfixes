@@ -226,11 +226,11 @@ SkipPackageInstallInFile() {
     shift
 
     # make sure file has an absolute path
-    HotMsg "skip installing package(s): $*"
     case "$file" in
         /*) ;;                        # file has absolute path
         *) file="$defpath/$file" ;;   # file has relative path, add the default path
     esac
+    HotMsg "skip installing package(s) in $file: $*"
 
     # handle skipping given packages
     for pkg in "$@" ; do
