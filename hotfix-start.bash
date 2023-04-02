@@ -87,7 +87,8 @@ Main() {
             ;;
         2023.03.27)  # Cassini nova R1 
             # [hardwaredetect] Do not return error if hardware detection fails
-            wget -qN -P "/usr/lib/calamares/modules/hardwaredetect/" "https://raw.githubusercontent.com/endeavouros-team/calamares/01aeb60d05c864bacc926f718686c27c69b84f49/src/modules/hardwaredetect/main.py" 
+            wget -qN -P "/usr/lib/calamares/modules/hardwaredetect/" "https://raw.githubusercontent.com/endeavouros-team/calamares/01aeb60d05c864bacc926f718686c27c69b84f49/src/modules/hardwaredetect/main.py"
+            SkipPackageInstallInFile packagechooser_ce.conf xcursor-neutral
             ;;
         *)
             HotMsg "no hotfixes for ISO version $ISO_VERSION."
@@ -201,13 +202,39 @@ Update_packages() {  # parameters: package names
     fi
 }
 
-SkipPackageInstall() {
+SkipPackageInstall() {               # deprecated because of SkipPackageInstallInFile()
     # remove given packages from the list of packages to be installed
     HotMsg "skip installing package(s): $*"
     local pkg
     for pkg in "$@" ; do
         sed -E -i /etc/calamares/modules/netinstall.yaml          -e "/^[ \t]+-[ \t]+$pkg$/d"
         sed -E -i /etc/calamares/modules/netinstall-ce-base.yaml  -e "/^[ \t]+-[ \t]+$pkg$/d"
+    done
+}
+
+SkipPackageInstallInFile() {
+    # Example calls:
+    #    SkipPackageInstallInFile /etc/calamares/modules/netinstall.yaml ipw2100-fw ipw2200-fw     # file with absolute path, then package(s)
+    #    SkipPackageInstallInFile                        netinstall.yaml ipw2100-fw ipw2200-fw     # file with relative path, then package(s)
+    #
+    #    SkipPackageInstallInFile packagechooser_ce.conf xcursor-neutral
+
+    local file="$1"
+    local -r defpath=/etc/calamares/modules
+    local pkg
+
+    shift
+
+    # make sure file has an absolute path
+    HotMsg "skip installing package(s): $*"
+    case "$file" in
+        /*) ;;                        # file has absolute path
+        *) file="$defpath/$file" ;;   # file has relative path, add the default path
+    esac
+
+    # handle skipping given packages
+    for pkg in "$@" ; do
+        sed -E -i "$file" -e "/^[ \t]+-[ \t]+$pkg$/d"
     done
 }
 
