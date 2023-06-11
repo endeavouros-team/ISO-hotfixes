@@ -93,13 +93,18 @@ Main() {
             ;;
         2023.05.28)  # Cassini nova R2 
             # [hardwaredetect] Do not return error if hardware detection fails
-            wget -qN -P "/usr/lib/calamares/modules/hardwaredetect/" "https://raw.githubusercontent.com/endeavouros-team/calamares/01aeb60d05c864bacc926f718686c27c69b84f49/src/modules/hardwaredetect/main.py"
+            # wget -qN -P "/usr/lib/calamares/modules/hardwaredetect/" "https://raw.githubusercontent.com/endeavouros-team/calamares/01aeb60d05c864bacc926f718686c27c69b84f49/src/modules/hardwaredetect/main.py"
+            FetchFile_timestamp "/usr/lib/calamares/modules/hardwaredetect/main.py" \
+                                "https://raw.githubusercontent.com/endeavouros-team/calamares/01aeb60d05c864bacc926f718686c27c69b84f49/src/modules/hardwaredetect/main.py" \
+                                "https://gitlab.com/endeavouros-filemirror/calamares/-/raw/01aeb60d05c864bacc926f718686c27c69b84f49/src/modules/hardwaredetect/main.py"
             SkipPackageInstallInFile packagechooser_ce.conf xcursor-neutral
             sed -i 's/ttf-nerd-fonts-symbols-2048-em/ttf-nerd-fonts-symbols/g' /etc/calamares/modules/packagechooser_ce.conf
             ;;
         2023.06.09)  # Cassini nova R2 (rebuild)
             # [hardwaredetect] Do not return error if hardware detection fails
-            wget -qN -P "/usr/lib/calamares/modules/hardwaredetect/" "https://raw.githubusercontent.com/endeavouros-team/calamares/01aeb60d05c864bacc926f718686c27c69b84f49/src/modules/hardwaredetect/main.py"
+            FetchFile_timestamp "/usr/lib/calamares/modules/hardwaredetect/main.py" \
+                                "https://raw.githubusercontent.com/endeavouros-team/calamares/01aeb60d05c864bacc926f718686c27c69b84f49/src/modules/hardwaredetect/main.py" \
+                                "https://gitlab.com/endeavouros-filemirror/calamares/-/raw/01aeb60d05c864bacc926f718686c27c69b84f49/src/modules/hardwaredetect/main.py"
             SkipPackageInstallInFile packagechooser_ce.conf xcursor-neutral
             sed -i 's/ttf-nerd-fonts-symbols-2048-em/ttf-nerd-fonts-symbols/g' /etc/calamares/modules/packagechooser_ce.conf
             ;;
@@ -201,6 +206,23 @@ FetchFile() {
         HotMsg "fetching new '$local' failed" warning
     fi
     rm $localtmp
+}
+FetchFile_timestamp() {
+    # Try fetching $remoteurl to $localfile. If it fails, try $remoteutl_alt instead.
+    local localfile="$1"
+    local remoteurl="$2"        # a github file
+    local remoteurl_alt="$3"    # a gitlab file
+
+    wget -qN --timeout=60 -O "$localfile" "$remoteurl"
+    case "$?" in
+        0) return ;;
+        *) if [ -n "$remoteurl_alt" ] ; then
+               FetchFile_timestamp "$localfile" "$remoteurl_alt" ""
+           else
+               HotMsg "fetching '$remoteurl' failed" warning
+           fi
+           ;;
+    esac
 }
 
 Update_packages() {  # parameters: package names
