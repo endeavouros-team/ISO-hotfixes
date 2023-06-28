@@ -99,6 +99,8 @@ Main() {
                                 "https://raw.githubusercontent.com/endeavouros-team/calamares/01aeb60d05c864bacc926f718686c27c69b84f49/src/modules/hardwaredetect/main.py"
             SkipPackageInstallInFile packagechooser_ce.conf xcursor-neutral
             sed -i 's/ttf-nerd-fonts-symbols-2048-em/ttf-nerd-fonts-symbols/g' /etc/calamares/modules/packagechooser_ce.conf
+            # [netinstall.yaml] fix cinnamon to not get xdg-desktop-portal-gnome installed
+            sed -i '/^    - x-apps.*/ a\    - xdg-desktop-portal-gtk' /etc/calamares/modules/netinstall.yaml
             ;;
         2023.06.09)  # Cassini nova R2 (rebuild)
             # [hardwaredetect] Do not return error if hardware detection fails
