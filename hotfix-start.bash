@@ -114,8 +114,7 @@ Main() {
             sed -i '/^    - x-apps.*/ a\    - xdg-desktop-portal-gtk' /etc/calamares/modules/netinstall.yaml
             # remove xfs from offered filesystems in partition module 
             # https://github.com/calamares/calamares/issues?q=xfs
-            sed -i /etc/calamares/modules/partition.conf \
-            -e 's|availableFileSystemTypes:  ["ext4","btrfs","xfs"] |availableFileSystemTypes:  ["ext4","btrfs"] |'
+            sed -i /etc/calamares/modules/partition.conf -e 's|availableFileSystemTypes:  ["ext4","btrfs","xfs"]|availableFileSystemTypes:  ["ext4","btrfs"]|'
             ;;
             
         *)
