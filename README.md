@@ -6,7 +6,7 @@ Details: see files [hotfix-start.bash](hotfix-start.bash) and [hotfix-end.bash](
 
 Hotfix date | Affected ISO | Hotfix file | Description
 :--- | :--- | :--- | :---
-2023.07.31 | EndeavourOS_Cassini_Nova-03-2023_R3.iso | hotfix-start.bash | add R3 to get hotfixes applied too (Cassini)
+2023.08.05 | EndeavourOS_Cassini_Nova-03-2023_R3.iso | hotfix-start.bash | add R3 to get hotfixes applied too (Cassini)
 2023.06.28 | EndeavourOS_Cassini_Nova-03-2023_R2.iso | hotfix-start.bash |  [netinstall.yaml] fix cinnamon to not get xdg-desktop-portal-gnome installed
 2023.05.28 | EndeavourOS_Cassini_Nova-03-2023_R2.iso | hotfix-start.bash | add R2 to get hotfixes applied too (Cassini)
 2023.05.03 | EndeavourOS_Cassini_Nova-03-2023_R1.iso | hotfix-start.bash | replace ttf-nerd-fonts-symbols-2048-em with ttf-nerd-fonts-symbols for CE
