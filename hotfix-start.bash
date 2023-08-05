@@ -102,7 +102,7 @@ Main() {
             # [netinstall.yaml] fix cinnamon to not get xdg-desktop-portal-gnome installed
             sed -i '/^    - x-apps.*/ a\    - xdg-desktop-portal-gtk' /etc/calamares/modules/netinstall.yaml
             ;;
-        2023.07.31)  # Cassini nova R3 
+        2023.08.05)  # Cassini nova R3 
             # [hardwaredetect] Do not return error if hardware detection fails
             # wget -qN -P "/usr/lib/calamares/modules/hardwaredetect/" "https://raw.githubusercontent.com/endeavouros-team/calamares/01aeb60d05c864bacc926f718686c27c69b84f49/src/modules/hardwaredetect/main.py"
             FetchFile_timestamp "/usr/lib/calamares/modules/hardwaredetect/main.py" \
