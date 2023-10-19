@@ -1,0 +1,34 @@
+--- /tmp/meld-tmp054474ay.yaml
++++ /home/joekamprad/Dokumente/hotfix-cassini-R3/calamares-22.12.3.6/data/eos/modules/netinstall.yaml.fixed
+@@ -371,7 +371,7 @@
+         - eos-qogir-icons
+   packages:
+     - adwaita-icon-theme
+-    - eog
++    - loupe
+     - evince
+     - file-roller
+     - gdm
+@@ -384,10 +384,12 @@
+     - gnome-power-manager
+     - gnome-screenshot
+     - gnome-shell
++    - gnome-system-monitor
+     - gnome-text-editor
+     - gnome-themes-extra
+     - gnome-tweaks
+     - gnome-usage
++    - gnome-weather
+     - gvfs
+     - gvfs-afc
+     - gvfs-gphoto2
+@@ -398,6 +400,8 @@
+     - nautilus-sendto
+     - sushi
+     - totem
++    - xdg-desktop-portal-gnome
++    - xdg-desktop-portal
+     - xdg-user-dirs-gtk
+ - name: MATE-Desktop
+   description: "MATE Desktop - the continuation of GNOME 2"
+
