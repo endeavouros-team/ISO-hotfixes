@@ -1,6 +1,42 @@
---- netinstall.yaml
-+++ netinstall.yaml.fixed
-@@ -371,7 +371,7 @@
+--- /run/media/joekamprad/i3-private/home/joekamprad/Dokumente/hotfix-cassini-R3/netinstall.yaml
++++ /run/media/joekamprad/i3-private/home/joekamprad/Dokumente/hotfix-cassini-R3/netinstall.yaml.new
+@@ -327,16 +327,20 @@
+         - eos-settings-plasma
+   packages:
+     - ark
+-    - audiocd-kio
+     - bluedevil
+     - breeze-gtk
+     - dolphin
++    - dolphin-plugins
+     - gwenview
++    - haruna
+     - kcalc
+     - kate
+     - kdeconnect
++    - kdeplasma-addons
+     - kde-gtk-config
++    - kgamma5
+     - khotkeys
++    - kimageformats5
+     - kinfocenter
+     - kinit
+     - kio-fuse
+@@ -348,12 +352,11 @@
+     - plasma-disks
+     - plasma-nm
+     - plasma-pa
++    - plasma-systemmonitor
+     - powerdevil
+     - print-manager
+     - sddm-kcm
+-    - solid
+     - spectacle
+-    - vlc
+     - xsettingsd
+ - name: GNOME-Desktop
+   description: "GNOME Desktop - designed to put you in control and get things done."
+@@ -371,7 +374,7 @@
          - eos-qogir-icons
    packages:
      - adwaita-icon-theme
@@ -9,7 +45,7 @@
      - evince
      - file-roller
      - gdm
-@@ -384,10 +384,12 @@
+@@ -384,10 +387,12 @@
      - gnome-power-manager
      - gnome-screenshot
      - gnome-shell
@@ -22,7 +58,7 @@
      - gvfs
      - gvfs-afc
      - gvfs-gphoto2
-@@ -398,6 +400,8 @@
+@@ -398,6 +403,8 @@
      - nautilus-sendto
      - sushi
      - totem
