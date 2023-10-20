@@ -124,7 +124,12 @@ Main() {
             # https://github.com/calamares/calamares/issues?q=xfs
             sed -i -e 's/availableFileSystemTypes:  \["ext4","btrfs","xfs"\]/availableFileSystemTypes:  ["ext4","btrfs"]/g' /etc/calamares/modules/partition.conf
             ;;
-            
+        2023.10.13)  # Cassini nova R3 -last weekly rebuild
+            # [netinstall.yaml] fix gnome to get xdg-desktop-portal-gnome installed for dark-light mode switch to work (Gnome 45  change)
+            # + fixes for KDE (package renaming upstream)
+            wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/netinstall.yaml-cassini-R3.patch"
+            patch "/etc/calamares/modules/netinstall.yaml" < "/tmp/netinstall.yaml-cassini-R3.patch"
+            ;;
         *)
             HotMsg "no hotfixes for ISO version $ISO_VERSION."
             ;;
