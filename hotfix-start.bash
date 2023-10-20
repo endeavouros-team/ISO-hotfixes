@@ -111,6 +111,7 @@ Main() {
             FetchFile_timestamp "/usr/lib/calamares/modules/hardwaredetect/main.py" \
                                 "https://gitlab.com/endeavouros-filemirror/calamares/-/raw/01aeb60d05c864bacc926f718686c27c69b84f49/src/modules/hardwaredetect/main.py" \
                                 "https://raw.githubusercontent.com/endeavouros-team/calamares/01aeb60d05c864bacc926f718686c27c69b84f49/src/modules/hardwaredetect/main.py"
+            # Community Edition fixes
             SkipPackageInstallInFile packagechooser_ce.conf xcursor-neutral
             sed -i 's/ttf-nerd-fonts-symbols-2048-em/ttf-nerd-fonts-symbols/g' /etc/calamares/modules/packagechooser_ce.conf
             # [netinstall.yaml] fix cinnamon to not get xdg-desktop-portal-gnome installed
@@ -118,7 +119,9 @@ Main() {
             # [netinstall.yaml] fix gnome to get xdg-desktop-portal-gnome installed for dark-light mode switch to work (Gnome 45  change)
             wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/netinstall.yaml-cassini-R3.patch"
             patch "/etc/calamares/modules/netinstall.yaml" < "/tmp/netinstall.yaml-cassini-R3.patch"
-            # remove xfs from offered filesystems in partition module 
+            # skip install for solid, not in repo anymore [KDE]
+            SkipPackageInstallInFile packagechooser.conf solid
+            # remove xfs from offered filesystems in partition module
             # https://github.com/calamares/calamares/issues?q=xfs
             sed -i -e 's/availableFileSystemTypes:  \["ext4","btrfs","xfs"\]/availableFileSystemTypes:  ["ext4","btrfs"]/g' /etc/calamares/modules/partition.conf
             ;;
