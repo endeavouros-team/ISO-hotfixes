@@ -117,6 +117,7 @@ Main() {
             # [netinstall.yaml] fix cinnamon to not get xdg-desktop-portal-gnome installed
             sed -i '/^    - x-apps.*/ a\    - xdg-desktop-portal-gtk' /etc/calamares/modules/netinstall.yaml
             # [netinstall.yaml] fix gnome to get xdg-desktop-portal-gnome installed for dark-light mode switch to work (Gnome 45  change)
+            # + fixes for KDE (package renaming upstream)
             wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/netinstall.yaml-cassini-R3.patch"
             patch "/etc/calamares/modules/netinstall.yaml" < "/tmp/netinstall.yaml-cassini-R3.patch"
             # remove xfs from offered filesystems in partition module
