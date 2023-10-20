@@ -119,8 +119,6 @@ Main() {
             # [netinstall.yaml] fix gnome to get xdg-desktop-portal-gnome installed for dark-light mode switch to work (Gnome 45  change)
             wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/netinstall.yaml-cassini-R3.patch"
             patch "/etc/calamares/modules/netinstall.yaml" < "/tmp/netinstall.yaml-cassini-R3.patch"
-            # skip install for solid, not in repo anymore [KDE]
-            SkipPackageInstallInFile packagechooser.conf solid
             # remove xfs from offered filesystems in partition module
             # https://github.com/calamares/calamares/issues?q=xfs
             sed -i -e 's/availableFileSystemTypes:  \["ext4","btrfs","xfs"\]/availableFileSystemTypes:  ["ext4","btrfs"]/g' /etc/calamares/modules/partition.conf
