@@ -6,6 +6,7 @@ Details: see files [hotfix-start.bash](hotfix-start.bash) and [hotfix-end.bash](
 
 Hotfix date | Affected ISO | Hotfix file | Description
 :--- | :--- | :--- | :---
+2023.10.20 | EndeavourOS_Cassini_Nova-03-2023_R3.iso (weekly 2023.10.13) | hotfix-start.bash | adding fixes for kde package renaming for Cassini nova R3 -last weekly rebuild (2023.10.13)
 2023.10.20 | EndeavourOS_Cassini_Nova-03-2023_R3.iso | hotfix-start.bash | adding fixes for kde package renaming
 2023.10.19 | EndeavourOS_Cassini_Nova-03-2023_R3.iso | hotfix-start.bash | fix gnome to get xdg-desktop-portal-gnome for dark-light mode switcher (GNOME 45)
 2023.08.05 | EndeavourOS_Cassini_Nova-03-2023_R3.iso | hotfix-start.bash | add R3 to get hotfixes applied too (Cassini), xfs FS removed from options on autopartitions currently (also added for R2 ISO)
