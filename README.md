@@ -6,7 +6,6 @@ Details: see files [hotfix-start.bash](hotfix-start.bash) and [hotfix-end.bash](
 
 Hotfix date | Affected ISO | Hotfix file | Description
 :--- | :--- | :--- | :---
-2023.10.20 | EndeavourOS_Cassini_Nova-03-2023_R3.iso | hotfix-start.bash | skip install for solid, not in repo anymore [KDE]
 2023.10.19 | EndeavourOS_Cassini_Nova-03-2023_R3.iso | hotfix-start.bash | fix gnome to get xdg-desktop-portal-gnome for dark-light mode switcher (GNOME 45)
 2023.08.05 | EndeavourOS_Cassini_Nova-03-2023_R3.iso | hotfix-start.bash | add R3 to get hotfixes applied too (Cassini), xfs FS removed from options on autopartitions currently (also added for R2 ISO)
 2023.06.28 | EndeavourOS_Cassini_Nova-03-2023_R2.iso | hotfix-start.bash |  [netinstall.yaml] fix cinnamon to not get xdg-desktop-portal-gnome installed
