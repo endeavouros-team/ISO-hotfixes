@@ -1,5 +1,5 @@
---- netinstall.yaml
-+++ netinstall.yaml.new
+--- /run/media/joekamprad/i3-private/home/joekamprad/Dokumente/hotfix-cassini-R3/netinstall.yaml
++++ /run/media/joekamprad/i3-private/home/joekamprad/Dokumente/hotfix-cassini-R3/netinstall.yaml.new
 @@ -327,16 +327,20 @@
          - eos-settings-plasma
    packages:
