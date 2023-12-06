@@ -130,6 +130,10 @@ Main() {
             wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/netinstall.yaml-cassini-R3.patch"
             patch "/etc/calamares/modules/netinstall.yaml" < "/tmp/netinstall.yaml-cassini-R3.patch"
             ;;
+        2023.12.01) # Galileo 
+            # 12/6/23 KDE package rename from kgamma5 to kgamma
+            sed -i 's/    - kgamma5/    - kgamma/g' /etc/calamares/modules/packagechooser.conf
+            ;;
         *)
             HotMsg "no hotfixes for ISO version $ISO_VERSION."
             ;;
