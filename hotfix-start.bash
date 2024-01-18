@@ -133,11 +133,19 @@ Main() {
         2023.11.17) # Galileo 
             # 12/6/23 KDE package rename from kgamma5 to kgamma
             sed -i 's/    - kgamma5/    - kgamma/g' /etc/calamares/modules/packagechooser.conf
+            Galileo-rate-mirrors-workaround
             ;;
         *)
             HotMsg "no hotfixes for ISO version $ISO_VERSION."
             ;;
     esac
+}
+
+Galileo-rate-mirrors-workaround() {
+    local remote=$(eos-github2gitlab "https://raw.githubusercontent.com/endeavouros-team/calamares/calamares/data/eos/scripts/update-mirrorlist")
+    local local=/etc/calamares/scripts/update-mirrorlist
+    FetchFile "$remote" "$local"
+    return 0
 }
 
 Atlantis_neo_fix() {
