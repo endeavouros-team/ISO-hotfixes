@@ -133,7 +133,7 @@ Main() {
         2023.11.17) # Galileo 
             # 12/6/23 KDE package rename from kgamma5 to kgamma
             sed -i 's/    - kgamma5/    - kgamma/g' /etc/calamares/modules/packagechooser.conf
-            Galileo-rate-mirrors-workaround
+            # Galileo-rate-mirrors-workaround
             ;;
         *)
             HotMsg "no hotfixes for ISO version $ISO_VERSION."
