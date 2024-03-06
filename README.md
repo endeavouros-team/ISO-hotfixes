@@ -6,6 +6,7 @@ Details: see files [hotfix-start.bash](hotfix-start.bash) and [hotfix-end.bash](
 
 Hotfix date | Affected ISO | Hotfix file | Description
 :--- | :--- | :--- | :---
+2023.04.07 | EndeavourOS_Galileo-Neo-2024.01.25.iso | hotfix-start.bash | KDE package-list update for Plasma 6 release [packagechooser.conf])
 2023.12.06 | Endeavouros-Galileo-11-2023.iso | hotfix-start.bash | KDE package rename from kgamma5 to kgamma (thanks to Schmitz at telegram for reporting!)
 2023.10.20 | EndeavourOS_Cassini_Nova-03-2023_R3.iso (weekly 2023.10.13) | hotfix-start.bash | adding fixes for kde package renaming for Cassini nova R3 -last weekly rebuild (2023.10.13)
 2023.10.20 | EndeavourOS_Cassini_Nova-03-2023_R3.iso | hotfix-start.bash | adding fixes for kde package renaming
