@@ -1,5 +1,7 @@
 # ISO-hotfixes
 
+[![Maintenance](https://img.shields.io/maintenance/yes/2024.svg)]()
+
 Descriptions of the hotfixes after ISO releases.
 
 Details: see files [hotfix-start.bash](hotfix-start.bash) and [hotfix-end.bash](hotfix-end.bash).
@@ -23,5 +25,3 @@ Hotfix date | Affected ISO | Hotfix file | Description
 
 
 <br>
-
-[![Maintenance](https://img.shields.io/maintenance/yes/2023.svg)]()
