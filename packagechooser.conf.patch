@@ -1,6 +1,6 @@
---- packagechooser.conf	2024-03-06 21:22:18.755893576 +0100
-+++ packagechooser.conf.patched	2024-03-06 23:01:02.157216281 +0100
-@@ -106,38 +106,51 @@
+--- packagechooser.conf	2024-01-24 11:19:48.000000000 +0100
++++ packagechooser.conf.patched	2024-03-07 00:43:28.254237491 +0100
+@@ -106,37 +106,51 @@
                  - eos-settings-plasma
          packages:
              - ark
@@ -9,7 +9,7 @@
              - breeze-gtk
              - dolphin
              - dolphin-plugins
-             - ffmpegthumbs
++            - ffmpegthumbs
 +            - fwupd
              - gwenview
              - haruna
