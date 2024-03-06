@@ -133,7 +133,11 @@ Main() {
         2023.11.17) # Galileo 
             # 12/6/23 KDE package rename from kgamma5 to kgamma
             sed -i 's/    - kgamma5/    - kgamma/g' /etc/calamares/modules/packagechooser.conf
-            # Galileo-rate-mirrors-workaround
+            ;;
+        2024.01.25) # Galileo Neo
+            # Plasma 6 release fixing kde packages list
+            wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/packagechooser.conf.patch"
+            patch "/etc/calamares/modules/packagechooser.conf" < "/tmp/packagechooser.conf.patch"
             ;;
         *)
             HotMsg "no hotfixes for ISO version $ISO_VERSION."
