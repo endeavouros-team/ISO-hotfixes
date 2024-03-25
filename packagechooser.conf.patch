@@ -1,11 +1,6 @@
---- packagechooser.conf	2024-01-24 11:19:48.000000000 +0100
-+++ packagechooser.conf.patched	2024-03-07 00:43:28.254237491 +0100
-@@ -106,37 +106,51 @@
-                 - eos-settings-plasma
-         packages:
-             - ark
-+            - baloo-widgets
-             - bluedevil
+--- packagechooser.conf	2024-03-25 16:16:10.849685485 +0100
++++ packagechooser.conf.patched	2024-03-25 16:17:26.613905573 +0100
+@@ -110,33 +110,46 @@
              - breeze-gtk
              - dolphin
              - dolphin-plugins
@@ -16,26 +11,26 @@
 -            - kcalc
              - kate
 +            - kcalc
++            - kde-cli-tools
 +            - kde-gtk-config
-+            - kde-inotify-survey
              - kdeconnect
 +            - kdegraphics-thumbnailers
 +            - kdenetwork-filesharing
-+            - kdepim-addons
              - kdeplasma-addons
 -            - kde-gtk-config
              - kgamma
 -            - khotkeys
 -            - kimageformats5
++            - kimageformats
              - kinfocenter
-             - kinit
+-            - kinit
 +            - kio-admin
 +            - kio-extras
              - kio-fuse
-+            - kio-gdrive
              - konsole
              - kscreen
              - kwallet-pam
++            - kwayland-integration
 +            - libappindicator-gtk3
 +            - maliit-keyboard
              - okular
@@ -51,8 +46,22 @@
              - print-manager
              - sddm-kcm
              - spectacle
++            - xdg-desktop-portal-kde
              - xsettingsd
 +            - xwaylandvideobridge
  
      - id: GNOME-Desktop
        name: "GNOME"
+@@ -216,6 +229,7 @@
+             - nautilus-sendto
+             - sushi
+             - totem
++            - tracker3-miners
+             - xdg-desktop-portal-gnome
+             - xdg-desktop-portal
+             - xdg-user-dirs-gtk
+@@ -745,4 +759,3 @@
+             - xorg-xbacklight
+             - xorg-xdpyinfo
+             - zip
+-
