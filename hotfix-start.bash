@@ -139,7 +139,7 @@ Main() {
             wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/packagechooser.conf.patch"
             patch "/etc/calamares/modules/packagechooser.conf" < "/tmp/packagechooser.conf.patch"
             ;;
-        2024.01.25) # Gemini
+        2024.04.20) # Gemini
             # Gnome nautilus-send removed from repo
             wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/packagechooser.conf_gemini_1.patch"
             patch "/etc/calamares/modules/packagechooser.conf" < "/tmp/packagechooser.conf_gemini_1.patch"
