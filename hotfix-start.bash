@@ -144,7 +144,6 @@ Main() {
             wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/packagechooser.conf_gemini_1.patch"
             patch "/etc/calamares/modules/packagechooser.conf" < "/tmp/packagechooser.conf_gemini_1.patch"
             ;;
-            
         *)
             HotMsg "no hotfixes for ISO version $ISO_VERSION."
             ;;
