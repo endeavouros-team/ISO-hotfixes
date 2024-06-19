@@ -8,7 +8,7 @@ Details: see files [hotfix-start.bash](hotfix-start.bash) and [hotfix-end.bash](
 
 Hotfix date | Affected ISO | Hotfix file | Description
 :--- | :--- | :--- | :---
-2024.03.25 | EndeavourOS_Gemini-2024.04.20.iso | hotfix-start.bash | Gnome nautilus-send removed from repo [packagechooser.conf]
+2024.06.19 | EndeavourOS_Gemini-2024.04.20.iso | hotfix-start.bash | Gnome nautilus-send removed from repo [packagechooser.conf]
 2024.03.25 | EndeavourOS_Galileo-Neo-2024.01.25.iso | hotfix-start.bash | add treacker3-miners for GNOME 46 [packagechooser.conf]
 2024.03.07 | EndeavourOS_Galileo-Neo-2024.01.25.iso | hotfix-start.bash | KDE package-list update for Plasma 6 release [packagechooser.conf]
 2023.12.06 | Endeavouros-Galileo-11-2023.iso | hotfix-start.bash | KDE package rename from kgamma5 to kgamma (thanks to Schmitz at telegram for reporting!)
