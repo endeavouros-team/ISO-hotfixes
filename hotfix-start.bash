@@ -148,8 +148,8 @@ Main() {
             # Move fstab after lukskeyfile job so crypttab is correct [settings_online.conf] [settings_offline.conf]
             wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/settings_online.conf.patch"
             wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/settings_offline.conf.patch"
-            patch "/etc/calamares/settings_online.conf.patch" < "/tmp/settings_online.conf.patch"
-            patch "/etc/calamares/settings_offline.conf.patch" < "/tmp/settings_offline.conf.patch"
+            patch "/etc/calamares/settings_online.conf" < "/tmp/settings_online.conf.patch"
+            patch "/etc/calamares/settings_offline.conf" < "/tmp/settings_offline.conf.patch"
             ;;
         *)
             HotMsg "no hotfixes for ISO version $ISO_VERSION."
