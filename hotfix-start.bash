@@ -144,6 +144,13 @@ Main() {
             wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/packagechooser.conf_gemini_1.patch"
             patch "/etc/calamares/modules/packagechooser.conf" < "/tmp/packagechooser.conf_gemini_1.patch"
             ;;
+        2024.06.25) # Endeavour
+            # Move fstab after lukskeyfile job so crypttab is correct [settings_online.conf] [settings_offline.conf]
+            wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/settings_online.conf.patch"
+            wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/settings_offline.conf.patch"
+            patch "/etc/calamares/settings_online.conf.patch" < "/tmp/settings_online.conf.patch"
+            patch "/etc/calamares/settings_offline.conf.patch" < "/tmp/settings_offline.conf.patch"
+            ;;
         *)
             HotMsg "no hotfixes for ISO version $ISO_VERSION."
             ;;
