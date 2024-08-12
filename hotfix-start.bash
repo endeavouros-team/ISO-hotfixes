@@ -152,6 +152,8 @@ Main() {
             patch "/etc/calamares/settings_offline.conf" < "/tmp/settings_offline.conf.patch"
             #  mirrorlist: replaced mirror f4st.host with moson.org --> https://github.com/endeavouros-team/EndeavourOS-ISO/commit/a290732253c67da1a7200c4dba4c45284bb8d54b
             #wget -qN -P "/etc/pacman.d/" "https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-ISO/main/mirrorlist"
+            # 2024-08-12: replace mirror f4st.host with moson.org in /etc/calamares/scripts/update-mirrorlist
+            sed -i /etc/calamares/scripts/update-mirrorlist -e s'|https://mirror.f4st.host/archlinux/$repo/os/$arch|https://mirror.moson.org/arch/$repo/os/$arch|'
             ;;
         *)
             HotMsg "no hotfixes for ISO version $ISO_VERSION."
