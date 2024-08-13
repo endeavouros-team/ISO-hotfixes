@@ -9,7 +9,7 @@ Details: see files [hotfix-start.bash](hotfix-start.bash) and [hotfix-end.bash](
 Hotfix date | Affected ISO | Hotfix file | Description
 :--- | :--- | :--- | :---
 2024.08.12| EndeavourOS_Endeavour-2024.06.25.iso| hotfix-start.bash | [hotfix-start.bash] replace bad mirror f4st.host with moson.org in /etc/calamares/scripts/update-mirrorlist
-2024.07.21| EndeavourOS_Endeavour-2024.06.25.iso| hotfix-start.bash | [hotfix-start.bash] (currently disabled as its causing similar issue) ~~adding changed mirrorlist to livesession~~
+~~2024.07.21~~| ~~EndeavourOS_Endeavour-2024.06.25.iso~~| ~~hotfix-start.bash~~ | [~~hotfix-start.bash]~~  ~~adding changed mirrorlist to livesession~~
 2024.07.14 | EndeavourOS_Endeavour-2024.06.25.iso| hotfix-start.bash | Move fstab after lukskeyfile job so crypttab is correct [settings_online.conf] [settings_offline.conf]
 2024.06.19 | EndeavourOS_Gemini-2024.04.20.iso | hotfix-start.bash | Gnome nautilus-send removed from repo [packagechooser.conf]
 2024.03.25 | EndeavourOS_Galileo-Neo-2024.01.25.iso | hotfix-start.bash | add tracker3-miners for GNOME 46 [packagechooser.conf]
