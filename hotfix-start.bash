@@ -154,6 +154,8 @@ Main() {
             sed -i /etc/calamares/scripts/update-mirrorlist -e s'|https://mirror.f4st.host/archlinux/$repo/os/$arch|https://mirror.moson.org/arch/$repo/os/$arch|'
             # skip xsane from /etc/calamares/modules/netinstall.yaml
             SkipPackageInstall xsane
+            # fixing non working copy paste for vmware installs:
+            wget -qN -O "/etc/calamares/scripts/chrooted_cleaner_script.sh" "https://raw.githubusercontent.com/endeavouros-team/calamares/calamares/data/eos/scripts/chrooted_cleaner_script.sh"
             ;;
         *)
             HotMsg "no hotfixes for ISO version $ISO_VERSION."
