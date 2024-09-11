@@ -156,6 +156,8 @@ Main() {
             SkipPackageInstall xsane
             # fixing non working copy paste for vmware installs:
             wget -qN -O "/etc/calamares/scripts/chrooted_cleaner_script.sh" "https://raw.githubusercontent.com/endeavouros-team/calamares/calamares/data/eos/scripts/chrooted_cleaner_script.sh"
+            # exchange mlocate with plocate (change on repo)
+            sed -i 's/    - mlocate/    - plocate/g' /etc/calamares/modules/netinstall.yaml
             ;;
         *)
             HotMsg "no hotfixes for ISO version $ISO_VERSION."
