@@ -8,7 +8,7 @@ Details: see files [hotfix-start.bash](hotfix-start.bash) and [hotfix-end.bash](
 
 Hotfix date | Affected ISO | Hotfix file | Description
 :--- | :--- | :--- | :---
-2024.09.11| EndeavourOS_Endeavour-2024.06.25.iso| hotfix-start.bash | fexchange mlocate with plocate (change on repo)
+2024.09.11| EndeavourOS_Endeavour-2024.06.25.iso| hotfix-start.bash | exchange mlocate with plocate (change on repo)
 2024.08.29| EndeavourOS_Endeavour-2024.06.25.iso| hotfix-start.bash | fixing non working copy paste for vmware installs 
 2024.08.13| EndeavourOS_Endeavour-2024.06.25.iso| hotfix-start.bash |skip xsane from /etc/calamares/modules/netinstall.yaml
 2024.08.12| EndeavourOS_Endeavour-2024.06.25.iso| hotfix-start.bash | replace bad mirror f4st.host with moson.org in /etc/calamares/scripts/update-mirrorlist
