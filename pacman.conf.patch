@@ -1,0 +1,11 @@
+--- pacman.conf	2024-09-05 17:31:43.110192668 +0200
++++ pacman.conf.patched	2024-09-15 01:02:05.676362231 +0200
+@@ -36,6 +36,8 @@
+ #CheckSpace
+ VerbosePkgLists
+ ParallelDownloads = 5
++DownloadUser = alpm
++#DisableSandbox
+ 
+ # By default, pacman accepts packages signed by keys that its local keyring
+ # trusts (see pacman-key and its man page), as well as unsigned packages.
