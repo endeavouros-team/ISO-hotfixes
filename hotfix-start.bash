@@ -158,6 +158,9 @@ Main() {
             wget -qN -O "/etc/calamares/scripts/chrooted_cleaner_script.sh" "https://raw.githubusercontent.com/endeavouros-team/calamares/calamares/data/eos/scripts/chrooted_cleaner_script.sh"
             # exchange mlocate with plocate (change on repo)
             sed -i 's/    - mlocate/    - plocate/g' /etc/calamares/modules/netinstall.yaml
+            # pacman.conf changes for pacman 7 update
+            wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/pacman.conf.patch"
+            patch "/etc/pacman.conf" < "/tmp/pacman.conf.patch"
             ;;
         *)
             HotMsg "no hotfixes for ISO version $ISO_VERSION."
