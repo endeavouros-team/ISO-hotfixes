@@ -161,8 +161,8 @@ Main() {
             # pacman.conf changes for pacman 7 update
             wget -qN -P "/etc/pacman.conf" "https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-ISO/main/airootfs/etc/pacman.conf"
             # makepkg.conf and makepkg.conf.d changes
-            wget -qN -P "/etc/makepkg.conf" "https://github.com/endeavouros-team/EndeavourOS-ISO/blob/main/airootfs/etc/makepkg.conf"
-            wget -qN -P "/etc/makepkg.conf.d/rust.conf" "https://gitlab.archlinux.org/archlinux/packaging/packages/pacman/-/raw/main/rust.conf"
+            wget -qN -P "/etc/" "https://github.com/endeavouros-team/EndeavourOS-ISO/blob/main/airootfs/etc/makepkg.conf"
+            wget -qN -P "/etc/makepkg.conf.d/" "https://gitlab.archlinux.org/archlinux/packaging/packages/pacman/-/raw/main/rust.conf"
             ;;
         *)
             HotMsg "no hotfixes for ISO version $ISO_VERSION."
