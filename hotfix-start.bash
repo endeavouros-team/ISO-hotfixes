@@ -164,6 +164,10 @@ Main() {
             wget -qN -P "/etc/" "https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-ISO/main/airootfs/etc/makepkg.conf"
             wget -qN -P "/etc/makepkg.conf.d/" "https://gitlab.archlinux.org/archlinux/packaging/packages/pacman/-/raw/main/rust.conf"
             ;;
+        2024.09.22) # EndeavourOS neo
+            # replace bad mirror f4st.host with moson.org in /etc/calamares/scripts/update-mirrorlist
+            sed -i /etc/calamares/scripts/update-mirrorlist -e s'|https://mirror.f4st.host/archlinux/$repo/os/$arch|https://mirror.moson.org/arch/$repo/os/$arch|'
+            ;;
         *)
             HotMsg "no hotfixes for ISO version $ISO_VERSION."
             ;;
