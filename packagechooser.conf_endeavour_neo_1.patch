@@ -1,0 +1,16 @@
+--- packagechooser.conf	2024-09-19 21:18:36.000000000 +0200
++++ packagechooser.conf.patched	2024-12-14 00:10:14.303080597 +0100
+@@ -145,6 +145,7 @@
+             - plasma-workspace
+             - powerdevil
+             - print-manager
++            - qt6-imageformats
+             - sddm-kcm
+             - spectacle
+             - xdg-desktop-portal-kde
+@@ -756,4 +757,5 @@
+             - xfce4-terminal
+             - xorg-xbacklight
+             - xorg-xdpyinfo
++            - xss-lock
+             - zip
