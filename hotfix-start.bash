@@ -164,6 +164,11 @@ Main() {
             wget -qN -P "/etc/" "https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-ISO/main/airootfs/etc/makepkg.conf"
             wget -qN -P "/etc/makepkg.conf.d/" "https://gitlab.archlinux.org/archlinux/packaging/packages/pacman/-/raw/main/rust.conf"
             ;;
+        2024.09.22) # Endeavour_Neo
+            # xss-lock added to i3 setup
+            wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/packagechooser.conf_endeavour_neo_1.patch"
+            patch "/etc/calamares/modules/packagechooser.conf" < "/tmp/packagechooser.conf_endeavour_neo_1.patch"
+            ;;
         *)
             HotMsg "no hotfixes for ISO version $ISO_VERSION."
             ;;
