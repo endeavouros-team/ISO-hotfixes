@@ -1,6 +1,6 @@
 # ISO-hotfixes
 
-[![Maintenance](https://img.shields.io/maintenance/yes/2024.svg)]()
+[![Maintenance](https://img.shields.io/maintenance/yes/2025.svg)]()
 
 Descriptions of the hotfixes after ISO releases.
 
