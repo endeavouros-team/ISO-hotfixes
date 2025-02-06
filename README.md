@@ -8,7 +8,7 @@ Details: see files [hotfix-start.bash](hotfix-start.bash) and [hotfix-end.bash](
 
 Hotfix date | Affected ISO | Hotfix file | Description
 :--- | :--- | :--- | :---
-2024.02.06| EndeavourOS_Endeavour_Neo-2024.09.22.iso| hotfix-start.bash | reiserfsprogs removed from pacstrap.conf (removed from repos upstream)
+2025.02.06| EndeavourOS_Endeavour_Neo-2024.09.22.iso| hotfix-start.bash | reiserfsprogs removed from pacstrap.conf (removed from repos upstream)
 2024.12.14| EndeavourOS_Endeavour_Neo-2024.09.22.iso| hotfix-start.bash | Endeavour_Neo 2 packages in for plasma and i3 setups
 2024.09.17| EndeavourOS_Endeavour-2024.06.25.iso| hotfix-start.bash | adding changes to makepkg.conf and makepkg.conf.d/
 2024.09.15| EndeavourOS_Endeavour-2024.06.25.iso| hotfix-start.bash | adding changes to pacman.conf for pacman 7 update
