@@ -168,6 +168,8 @@ Main() {
             # xss-lock added to i3 setup
             wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/packagechooser.conf_endeavour_neo_1.patch"
             patch "/etc/calamares/modules/packagechooser.conf" < "/tmp/packagechooser.conf_endeavour_neo_1.patch"
+            wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/pacstrap.conf_endeavour_neo.patch"
+            patch "/etc/calamares/modules/pacstrap.conf" < "/tmp/pacstrap.conf_endeavour_neo.patch"
             ;;
         *)
             HotMsg "no hotfixes for ISO version $ISO_VERSION."
