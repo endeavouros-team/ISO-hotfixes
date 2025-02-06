@@ -1,0 +1,10 @@
+--- pacstrap.conf	2025-02-06 13:57:10.684469600 +0100
++++ pacstrap.conf.patched	2025-02-06 13:56:25.941828127 +0100
+@@ -44,7 +44,6 @@
+   - ntfs-3g
+   - perl
+   - python
+-  - reiserfsprogs
+   - s-nail
+   - sudo
+   - sysfsutils
