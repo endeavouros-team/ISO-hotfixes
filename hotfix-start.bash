@@ -172,6 +172,10 @@ Main() {
             wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/pacstrap.conf_endeavour_neo.patch"
             patch "/etc/calamares/modules/pacstrap.conf" < "/tmp/pacstrap.conf_endeavour_neo.patch"
             ;;
+        2025.02.16) # Mercury
+            # xwaylandvideobridge has been removed from the [extra] repository.
+            SkipPackageInstall xwaylandvideobridge
+            ;;
         *)
             HotMsg "no hotfixes for ISO version $ISO_VERSION."
             ;;
