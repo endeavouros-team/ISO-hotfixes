@@ -174,7 +174,7 @@ Main() {
             ;;
         2025.02.16) # Mercury
             # xwaylandvideobridge has been removed from the [extra] repository.
-            SkipPackageInstall xwaylandvideobridge
+            SkipPackageInstallInFile packagechooser.conf  xwaylandvideobridge
             ;;
         *)
             HotMsg "no hotfixes for ISO version $ISO_VERSION."
