@@ -175,6 +175,8 @@ Main() {
         2025.02.08) # Mercury
             # xwaylandvideobridge has been removed from the [extra] repository.
             SkipPackageInstallInFile packagechooser.conf  xwaylandvideobridge
+            # fix for not ranking Arch mirrors in update-mirrorlist
+            Galileo-rate-mirrors-workaround     # re-use existing code!
             ;;
         *)
             HotMsg "no hotfixes for ISO version $ISO_VERSION."
