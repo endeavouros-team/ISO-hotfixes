@@ -178,6 +178,11 @@ Main() {
             # fix for not ranking Arch mirrors in update-mirrorlist
             Galileo-rate-mirrors-workaround     # re-use existing code!
             ;;
+        2025.03.19) # Mercury_Neo
+            # Removed LTS Kernel option in netinstall.yaml, LTS kernel causes non booting OS if Grub and encryption is in use
+            wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/netinstall.yaml.patch"
+            patch "/etc/calamares/modules/netinstall.yaml" < "/tmp/netinstall.yaml.patch"
+            ;;
         *)
             HotMsg "no hotfixes for ISO version $ISO_VERSION."
             ;;
