@@ -1,0 +1,18 @@
+--- netinstall.yaml	2025-03-16 16:00:46.000000000 +0100
++++ netinstall.yaml.patched	2025-05-07 19:33:37.519086231 +0200
+@@ -195,15 +195,6 @@
+   packages:
+     - firewalld
+     - python-pyqt6
+-- name: "LTS kernel in addition"
+-  description: "Adding Long Term Supported kernel in addition to main one"
+-  hidden: false
+-  selected: false
+-  expanded: false
+-  critical: false
+-  packages:
+-    - linux-lts
+-    - linux-lts-headers
+ - name: "Printing support"
+   description: "Support for printing (Cups)"
+   hidden: false
