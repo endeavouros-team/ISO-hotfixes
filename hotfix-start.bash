@@ -178,7 +178,7 @@ Main() {
             # fix for not ranking Arch mirrors in update-mirrorlist
             Galileo-rate-mirrors-workaround     # re-use existing code!
             ;;
-        2024.09.22) # Mercury_Neo
+        2025.03.19) # Mercury_Neo
             # obconf replaced with lxappearance-obconf-gtk3 for LXDE
             wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/packagechooser.conf_mercury_neo.patch"
             patch "/etc/calamares/modules/packagechooser.conf" < "/tmp/packagechooser.conf_mercury_neo.patch"
