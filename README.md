@@ -8,6 +8,7 @@ Details: see files [hotfix-start.bash](hotfix-start.bash) and [hotfix-end.bash](
 
 Hotfix date | Affected ISO | Hotfix file | Description
 :--- | :--- | :--- | :---
+2025.05.23| EndeavourOS_Mercury-Neo-2025.03.19.iso | hotfix-start.bash | obconf replaced with lxappearance-obconf-gtk3 for LXDE
 ~~2025.05.07~~| ~~EndeavourOS_Mercury-Neo-2025.03.19.iso~~ | ~~hotfix-start.bash~~ | ~~remove LTS kernel from option (Temporary // issue with Grub and encryption using LTS)~~
 2025.03.10| EndeavourOS_Mercury-2025.02.08.iso | hotfix-start.bash | fix to rank Arch mirrors
 2025.02.18| EndeavourOS_Mercury-2025.02.08.iso | hotfix-start.bash | removing xwaylandvideobridge (removed from repos upstream)
