@@ -1,11 +1,11 @@
 --- packagechooser.conf	2025-03-17 00:00:47.000000000 +0100
-+++ packagechooser.conf_mercury_neo.patched	2025-05-23 18:50:32.481249324 +0200
++++ packagechooser.conf_mercury_neo.patched	2025-05-24 13:38:31.666522414 +0200
 @@ -651,7 +651,7 @@
            - gvfs-nfs
            - gvfs-smb
            - lxappearance-gtk3
 -          - obconf
-+          - lxappearance-obconf-gtk3
++          - obconf-qt
            - lxde-common
            - lxde-icon-theme
            - lxhotkey-gtk3
