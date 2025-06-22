@@ -362,10 +362,11 @@ AddPackageToFile() {
     local file="$1"
     local after_this_pkg="$2"
     local new_pkg="$3"
-    local line=$(grep -E "^[ ]+-[ ]+${after_this_pkg}[ ]*$" "$file")
-    local spaces=$(echo "$line" | sed -E 's|^ ([ ]+).*|\1|')
-
-    sed -i "/^ ${spaces}- ${after_this_pkg}.*/ a\ ${spaces}- ${new_pkg}"  "$file"
+    if ! grep -E "^[ ]+-[ ]+$new_pkg[ ]*$" "$file" ; then
+        local line=$(grep -E "^[ ]+-[ ]+${after_this_pkg}[ ]*$" "$file")
+        local spaces=$(echo "$line" | sed -E 's|^ ([ ]+).*|\1|')
+        sed -i "/^ ${spaces}- ${after_this_pkg}.*/ a\ ${spaces}- ${new_pkg}"  "$file"
+    fi
 }
 
 #### Execution starts here
