@@ -182,6 +182,8 @@ Main() {
             # obconf replaced with lxappearance-obconf-gtk3 for LXDE
             wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/packagechooser.conf_mercury_neo.patch"
             patch "/etc/calamares/modules/packagechooser.conf" < "/tmp/packagechooser.conf_mercury_neo.patch"
+            # add plasma-x11-session to be installed
+            AddPackageToFile /etc/calamares/modules/packagechooser.conf plasma-workspace plasma-x11-session
             ;;
         *)
             HotMsg "no hotfixes for ISO version $ISO_VERSION."
@@ -354,6 +356,16 @@ SkipPackageInstallInFile() {
     for pkg in "$@" ; do
         sed -E -i "$file" -e "/^[ \t]+-[ \t]+$pkg$/d"
     done
+}
+
+AddPackageToFile() {
+    local file="$1"
+    local after_this_pkg="$2"
+    local new_pkg="$3"
+    local line=$(grep -E "^[ ]+-[ ]+${after_this_pkg}[ ]*$" "$file")
+    local spaces=$(echo "$line" | sed -E 's|^ ([ ]+).*|\1|')
+
+    sed -i "/^ ${spaces}- ${after_this_pkg}.*/ a\ ${spaces}- ${new_pkg}"  "$file"
 }
 
 #### Execution starts here
