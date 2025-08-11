@@ -180,10 +180,10 @@ Main() {
             ;;
         2025.03.19) # Mercury_Neo
             # obconf replaced with lxappearance-obconf-gtk3 for LXDE
+            # add plasma-x11-session to be installed note: added to the patch from AddPackageToFile (resorting)
+            # replacing xbacklight with brightnessctl i3-wm
             wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/packagechooser.conf_mercury_neo.patch"
             patch "/etc/calamares/modules/packagechooser.conf" < "/tmp/packagechooser.conf_mercury_neo.patch"
-            # add plasma-x11-session to be installed
-            AddPackageToFile /etc/calamares/modules/packagechooser.conf plasma-workspace plasma-x11-session
             ;;
         *)
             HotMsg "no hotfixes for ISO version $ISO_VERSION."
