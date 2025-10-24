@@ -1,5 +1,5 @@
 --- packagechooser.conf.old	2025-03-17 00:00:47.000000000 +0100
-+++ packagechooser.conf.new	2025-10-22 20:45:05.935703978 +0200
++++ packagechooser.conf.new	2025-10-24 14:51:10.298463564 +0200
 @@ -145,6 +145,7 @@
              - plasma-pa
              - plasma-systemmonitor
@@ -25,24 +25,28 @@
              - xdg-desktop-portal-gnome
              - xdg-desktop-portal
              - xdg-user-dirs-gtk
-@@ -651,20 +651,20 @@
+@@ -650,21 +650,21 @@
+           - gvfs-mtp
            - gvfs-nfs
            - gvfs-smb
-           - lxappearance-gtk3
+-          - lxappearance-gtk3
 -          - obconf
-+          - lxappearance-obconf-gtk3
++          - lxappearance
++          - lxappearance-obconf
            - lxde-common
            - lxde-icon-theme
 -          - lxhotkey-gtk3
-+          - lxhotkey
-           - lxinput-gtk3
+-          - lxinput-gtk3
 -          - lxlauncher-gtk3
 -          - lxpanel-gtk3
-+          - lxlauncher
-+          - lxpanel
-           - lxrandr-gtk3
+-          - lxrandr-gtk3
 -          - lxsession-gtk3
 -          - lxtask-gtk3
++          - lxhotkey
++          - lxinput
++          - lxlauncher
++          - lxpanel
++          - lxrandr
 +          - lxsession
 +          - lxtask
            - lxterminal
