@@ -8,6 +8,7 @@ Details: see files [hotfix-start.bash](hotfix-start.bash) and [hotfix-end.bash](
 
 Hotfix date | Affected ISO | Hotfix file | Description
 :--- | :--- | :--- | :---
+2025.11.07| EndeavourOS_Mercury-Neo-2025.03.19.iso | hotfix-start.bash | Removed maliit-keyboard and replace libappindicator-gtk3 with libappindicator [plasma]
 2025.10.24| EndeavourOS_Mercury-Neo-2025.03.19.iso | hotfix-start.bash | removal of -gtk3 postfixes on LXDE packagenames
 2025.10.21| EndeavourOS_Mercury-Neo-2025.03.19.iso | hotfix-start.bash | gnome-screenshot removal, pacmanfm renamed
 2025.08.11| EndeavourOS_Mercury-Neo-2025.03.19.iso | hotfix-start.bash | xbacklight replaced with brightnessctl for i3-wm
