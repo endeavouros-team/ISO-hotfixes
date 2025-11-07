@@ -1,6 +1,16 @@
 --- packagechooser.conf.old	2025-03-17 00:00:47.000000000 +0100
-+++ packagechooser.conf.new	2025-10-24 14:51:10.298463564 +0200
-@@ -145,6 +145,7 @@
++++ packagechooser.conf.new	2025-11-07 22:13:53.599315522 +0100
+@@ -134,8 +134,7 @@
+             - kscreen
+             - kwallet-pam
+             - kwayland-integration
+-            - libappindicator-gtk3
+-            - maliit-keyboard
++            - libappindicator
+             - okular
+             - plasma-browser-integration
+             - plasma-desktop
+@@ -145,6 +144,7 @@
              - plasma-pa
              - plasma-systemmonitor
              - plasma-workspace
@@ -8,7 +18,7 @@
              - powerdevil
              - print-manager
              - qt6-imageformats
-@@ -213,7 +214,6 @@
+@@ -213,7 +213,6 @@
              - gnome-keyring
              - gnome-nettool
              - gnome-power-manager
@@ -16,7 +26,7 @@
              - gnome-shell
              - gnome-system-monitor
              - gnome-terminal
-@@ -230,7 +230,7 @@
+@@ -230,7 +229,7 @@
              - gvfs-smb
              - nautilus
              - sushi
@@ -25,7 +35,7 @@
              - xdg-desktop-portal-gnome
              - xdg-desktop-portal
              - xdg-user-dirs-gtk
-@@ -650,21 +650,21 @@
+@@ -650,21 +649,21 @@
            - gvfs-mtp
            - gvfs-nfs
            - gvfs-smb
@@ -57,7 +67,7 @@
            - lxmusic
            - mpv
            - network-manager-applet
-@@ -715,6 +715,7 @@
+@@ -715,6 +714,7 @@
              - arc-gtk-theme-eos
              - archlinux-xdg-menu
              - awesome-terminal-fonts
@@ -65,7 +75,7 @@
              - dex
              - dmenu
              - dunst
-@@ -756,7 +757,6 @@
+@@ -756,7 +756,6 @@
              - xdg-user-dirs-gtk
              - xed
              - xfce4-terminal
