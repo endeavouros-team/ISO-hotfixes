@@ -1,0 +1,10 @@
+--- netinstall.yaml.old	2025-03-17 00:00:47.000000000 +0100
++++ netinstall.yaml.new	2025-11-10 19:30:35.635019225 +0100
+@@ -166,6 +166,7 @@
+     - nano-syntax-highlighting
+     - pv
+     - python-defusedxml
++    - python-jinja
+     - python-packaging
+     - rsync
+     - tldr
