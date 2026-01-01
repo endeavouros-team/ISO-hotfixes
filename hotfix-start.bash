@@ -191,6 +191,13 @@ Main() {
             wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/netinstall.yaml_mercury_neo.patch"
             patch "/etc/calamares/modules/netinstall.yaml" < "/tmp/netinstall.yaml_mercury_neo.patch"
             ;;
+
+       2026.01.01) # Ganymede
+            # nemo-preview removed from Cinnamon and Budgie (not on Archrepo anymore)
+
+            wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/packagechooser.conf_ganymede.patch"
+            patch "/etc/calamares/modules/packagechooser.conf" < "/tmp/packagechooser.conf_ganymede.patch"
+            ;;
         *)
             HotMsg "no hotfixes for ISO version $ISO_VERSION."
             ;;

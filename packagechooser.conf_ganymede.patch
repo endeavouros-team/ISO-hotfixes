@@ -1,0 +1,18 @@
+--- packagechooser.conf	2025-03-17 00:00:47.000000000 +0100
++++ packagechooser.conf.patched	2026-01-01 16:46:19.279153795 +0100
+@@ -385,7 +385,6 @@
+             - mpv
+             - nemo-fileroller
+             - nemo-image-converter
+-            - nemo-preview
+             - nemo-share
+             - x-apps
+             - xdg-user-dirs-gtk
+@@ -522,7 +521,6 @@
+             - mpv
+             - nemo
+             - nemo-fileroller
+-            - nemo-preview
+             - network-manager-applet
+             - sushi
+             - xdg-user-dirs-gtk

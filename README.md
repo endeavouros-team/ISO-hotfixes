@@ -8,6 +8,7 @@ Details: see files [hotfix-start.bash](hotfix-start.bash) and [hotfix-end.bash](
 
 Hotfix date | Affected ISO | Hotfix file | Description
 :--- | :--- | :--- | :---
+2026.01.01| EndeavourOS_Ganymede-2025.11.24.iso | hotfix-start.bash | [cinnamon] [budgie] nemo-preview removed from Cinnamon and Budgie (not on Archrepo anymore)
 2025.11.10| EndeavourOS_Mercury-Neo-2025.03.19.iso | hotfix-start.bash | [plasma] adding plasma-keyboard, adding python-jinja for glances
 2025.11.07| EndeavourOS_Mercury-Neo-2025.03.19.iso | hotfix-start.bash | Removed maliit-keyboard and replace libappindicator-gtk3 with libappindicator [plasma]
 2025.10.24| EndeavourOS_Mercury-Neo-2025.03.19.iso | hotfix-start.bash | removal of -gtk3 postfixes on LXDE packagenames
