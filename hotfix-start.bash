@@ -192,7 +192,7 @@ Main() {
             patch "/etc/calamares/modules/netinstall.yaml" < "/tmp/netinstall.yaml_mercury_neo.patch"
             ;;
 
-       2026.01.01) # Ganymede
+        2025.11.24) # Ganymede
             # nemo-preview removed from Cinnamon and Budgie (not on Archrepo anymore)
 
             wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/packagechooser.conf_ganymede.patch"
