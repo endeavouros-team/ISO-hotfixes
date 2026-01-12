@@ -198,7 +198,7 @@ Main() {
             wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/packagechooser.conf_ganymede.patch"
             patch "/etc/calamares/modules/packagechooser.conf" < "/tmp/packagechooser.conf_ganymede.patch"
             ;;
-        2022.01.12) # Ganymede_Neo
+        2026.01.12) # Ganymede_Neo
             # testing HotFix Changes
 
             wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/packagechooser.conf_ganymede_neo.patch"
