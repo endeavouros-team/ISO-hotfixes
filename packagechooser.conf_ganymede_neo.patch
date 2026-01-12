@@ -1,0 +1,11 @@
+--- packagechooser.conf	2026-01-12 20:10:47.107938805 +0100
++++ packagechooser.conf_ganymede_neo	2026-01-12 21:11:56.692437485 +0100
+@@ -3,6 +3,8 @@
+ #
+ # Configuration for EndeavourOS Desktop chooser in Calamares
+ 
++# test changes to hotfix for Ganymede_Neo (12.01.2026)
++
+ mode: required
+ 
+ method: netinstall-add
