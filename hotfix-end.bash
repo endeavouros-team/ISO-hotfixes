@@ -27,10 +27,6 @@ Main() {
                 Install_packages linux-firmware-marvell
             fi
             ;;
-        2026.01.12)
-            HotMsg "hotfixes Ganymede Neo test ISO $ISO_VERSION."
-            Install_packages eos-hwtool
-            ;;
         "")
             HotMsg "ISO version not found." warning
             ;;
