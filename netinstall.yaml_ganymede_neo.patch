@@ -1,0 +1,11 @@
+--- netinstall.yaml	2026-01-12 20:17:40.000000000 +0100
++++ netinstall.yaml.patched	2026-02-06 15:11:01.220158580 +0100
+@@ -194,7 +194,7 @@
+   critical: true
+   packages:
+     - firewalld
+-    - python-pyqt6
++    - firewall-applet
+ - name: "LTS kernel in addition"
+   description: "Adding Long Term Supported kernel in addition to main one"
+   hidden: false

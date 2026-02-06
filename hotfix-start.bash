@@ -198,6 +198,16 @@ Main() {
             wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/packagechooser.conf_ganymede.patch"
             patch "/etc/calamares/modules/packagechooser.conf" < "/tmp/packagechooser.conf_ganymede.patch"
             ;;
+
+        2026.01.12) # Ganymede_Neo
+            # firewalld package split changes (upstream Archrepo)
+            # changing netinstall.yaml (defaults) and packagechooser.conf (plasma)
+
+            wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/packagechooser.conf_ganymede_neo.patch"
+            patch "/etc/calamares/modules/packagechooser.conf" < "/tmp/packagechooser.conf_ganymede_neo.patch"
+            wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/netinstall.yaml_ganymede_neo.patch"
+            patch "/etc/calamares/modules/netinstall.yaml" < "/tmp/netinstall.yaml_ganymede_neo.patch"
+            ;;
         *)
             HotMsg "no hotfixes for ISO version $ISO_VERSION."
             ;;
