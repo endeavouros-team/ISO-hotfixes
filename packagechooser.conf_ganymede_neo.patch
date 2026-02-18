@@ -1,5 +1,5 @@
 --- packagechooser.conf	2026-01-12 20:17:40.000000000 +0100
-+++ packagechooser.conf.patched	2026-02-06 15:09:45.675185559 +0100
++++ packagechooser.conf.patched	2026-02-18 11:49:16.560086702 +0100
 @@ -139,7 +139,6 @@
              - plasma-browser-integration
              - plasma-desktop
@@ -8,3 +8,31 @@
              - plasma-keyboard
              - plasma-nm
              - plasma-pa
+@@ -503,12 +502,10 @@
+             - budgie-desktop
+             - budgie-desktop-view
+             - budgie-extras
+-            - budgie-screensaver
+             - eog
+             - file-roller
+             - gedit
+             - gnome-keyring
+-            - gnome-screenshot
+             - gnome-terminal
+             - gvfs
+             - gvfs-afc
+@@ -516,12 +513,14 @@
+             - gvfs-mtp
+             - gvfs-nfs
+             - gvfs-smb
++            - ibus
+             - lightdm
+             - lightdm-slick-greeter
+             - mpv
+             - nemo
+             - nemo-fileroller
+             - network-manager-applet
++            - mutter
+             - sushi
+             - xdg-user-dirs-gtk
+ 
