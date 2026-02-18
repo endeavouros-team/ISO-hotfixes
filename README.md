@@ -8,6 +8,7 @@ Details: see files [hotfix-start.bash](hotfix-start.bash) and [hotfix-end.bash](
 
 Hotfix date | Affected ISO | Hotfix file | Description
 :--- | :--- | :--- | :---
+2026.01.01| EndeavourOS_Ganymede_Neo-2026.01.12.iso | hotfix-start.bash | [budgie] [packagechooser.conf] Budgie 10.10 package changes
 2026.01.01| EndeavourOS_Ganymede_Neo-2026.01.12.iso | hotfix-start.bash | [plasma] [netinstall.yaml] firewalld package split changes
 2026.01.01| EndeavourOS_Ganymede-2025.11.24.iso | hotfix-start.bash | [cinnamon] [budgie] nemo-preview removed from Cinnamon and Budgie (not on Archrepo anymore)
 2025.11.10| EndeavourOS_Mercury-Neo-2025.03.19.iso | hotfix-start.bash | [plasma] adding plasma-keyboard, adding python-jinja for glances
