@@ -81,17 +81,17 @@ Main() {
             # Delete removed firmware packages from install lists (ipw2100-fw and ipw2200-fw).
             SkipPackageInstall ipw2100-fw ipw2200-fw
             ;;
-        2023.03.06)  # Cassini nova 
+        2023.03.06)  # Cassini nova
             # [hardwaredetect] Do not return error if hardware detection fails
-            wget -qN -P "/usr/lib/calamares/modules/hardwaredetect/" "https://raw.githubusercontent.com/endeavouros-team/calamares/01aeb60d05c864bacc926f718686c27c69b84f49/src/modules/hardwaredetect/main.py" 
+            wget -qN -P "/usr/lib/calamares/modules/hardwaredetect/" "https://raw.githubusercontent.com/endeavouros-team/calamares/01aeb60d05c864bacc926f718686c27c69b84f49/src/modules/hardwaredetect/main.py"
             ;;
-        2023.03.26)  # Cassini nova R1 
+        2023.03.26)  # Cassini nova R1
             # [hardwaredetect] Do not return error if hardware detection fails
             wget -qN -P "/usr/lib/calamares/modules/hardwaredetect/" "https://raw.githubusercontent.com/endeavouros-team/calamares/01aeb60d05c864bacc926f718686c27c69b84f49/src/modules/hardwaredetect/main.py"
             SkipPackageInstallInFile packagechooser_ce.conf xcursor-neutral
             sed -i 's/ttf-nerd-fonts-symbols-2048-em/ttf-nerd-fonts-symbols/g' /etc/calamares/modules/packagechooser_ce.conf
             ;;
-        2023.05.28)  # Cassini nova R2 
+        2023.05.28)  # Cassini nova R2
             # [hardwaredetect] Do not return error if hardware detection fails
             # wget -qN -P "/usr/lib/calamares/modules/hardwaredetect/" "https://raw.githubusercontent.com/endeavouros-team/calamares/01aeb60d05c864bacc926f718686c27c69b84f49/src/modules/hardwaredetect/main.py"
             FetchFile_timestamp "/usr/lib/calamares/modules/hardwaredetect/main.py" \
@@ -101,11 +101,11 @@ Main() {
             sed -i 's/ttf-nerd-fonts-symbols-2048-em/ttf-nerd-fonts-symbols/g' /etc/calamares/modules/packagechooser_ce.conf
             # [netinstall.yaml] fix cinnamon to not get xdg-desktop-portal-gnome installed
             sed -i '/^    - x-apps.*/ a\    - xdg-desktop-portal-gtk' /etc/calamares/modules/netinstall.yaml
-            # remove xfs from offered filesystems in partition module 
+            # remove xfs from offered filesystems in partition module
             # https://github.com/calamares/calamares/issues?q=xfs
             sed -i -e 's/availableFileSystemTypes:  \["ext4","btrfs","xfs"\]/availableFileSystemTypes:  ["ext4","btrfs"]/g' /etc/calamares/modules/partition.conf
             ;;
-        2023.08.05)  # Cassini nova R3 
+        2023.08.05)  # Cassini nova R3
             # [hardwaredetect] Do not return error if hardware detection fails
             # wget -qN -P "/usr/lib/calamares/modules/hardwaredetect/" "https://raw.githubusercontent.com/endeavouros-team/calamares/01aeb60d05c864bacc926f718686c27c69b84f49/src/modules/hardwaredetect/main.py"
             FetchFile_timestamp "/usr/lib/calamares/modules/hardwaredetect/main.py" \
@@ -130,7 +130,7 @@ Main() {
             wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/netinstall.yaml-cassini-R3.patch"
             patch "/etc/calamares/modules/netinstall.yaml" < "/tmp/netinstall.yaml-cassini-R3.patch"
             ;;
-        2023.11.17) # Galileo 
+        2023.11.17) # Galileo
             # 12/6/23 KDE package rename from kgamma5 to kgamma
             sed -i 's/    - kgamma5/    - kgamma/g' /etc/calamares/modules/packagechooser.conf
             ;;
@@ -208,6 +208,14 @@ Main() {
             wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/netinstall.yaml_ganymede_neo.patch"
             patch "/etc/calamares/modules/netinstall.yaml" < "/tmp/netinstall.yaml_ganymede_neo.patch"
             ;;
+
+        2026.03.06) # Titan
+            # issue with eos-settings packages using skel getting installed after user creation
+
+            wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/chrooted_cleaner_script.sh_titan.patch"
+            patch "/etc/calamares/scripts/chrooted_cleaner_script.sh" < "/tmp/chrooted_cleaner_script.sh_titan.patch"
+            ;;
+
         *)
             HotMsg "no hotfixes for ISO version $ISO_VERSION."
             ;;
@@ -394,4 +402,3 @@ AddPackageToFile() {
 
 #### Execution starts here
 Main "$@"
-

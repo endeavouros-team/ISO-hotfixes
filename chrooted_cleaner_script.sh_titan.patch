@@ -1,0 +1,22 @@
+--- chrooted_cleaner_script.sh	2026-03-18 23:59:19.925492064 +0100
++++ chrooted_cleaner_script.sh.patched	2026-03-19 00:01:25.213046618 +0100
+@@ -117,7 +117,7 @@
+         ## Calamares EndeavourOS
+         $(pacman -Qq | grep calamares)        # finds calamares related packages
+         ckbcomp
+-
++
+     )
+
+     pacman -Rsn --noconfirm "${packages_to_remove[@]}"
+@@ -179,6 +179,10 @@
+     # change log file permissions
+     [ -r /var/log/Calamares.log ]         && chown root:root /var/log/Calamares.log
+
++    # fix skel issue for Titan ISO
++    cp -rT /etc/skel/ /home/$NEW_USER/
++    chown -R "$NEW_USER":"$NEW_USER" "/home/$NEW_USER/"
++
+     # run possible user-given commands
+     # _RunUserCommands     # this is in calamares directly now
+ }

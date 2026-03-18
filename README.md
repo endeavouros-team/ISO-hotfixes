@@ -8,6 +8,7 @@ Details: see files [hotfix-start.bash](hotfix-start.bash) and [hotfix-end.bash](
 
 Hotfix date | Affected ISO | Hotfix file | Description
 :--- | :--- | :--- | :---
+2026.03.19| EndeavourOS_Titan-2026.03.06.iso | hotfix-start.bash | issue with eos-settings packages using skel getting installed after user creation
 2026.01.01| EndeavourOS_Ganymede_Neo-2026.01.12.iso | hotfix-start.bash | [budgie] [packagechooser.conf] Budgie 10.10 package changes
 2026.01.01| EndeavourOS_Ganymede_Neo-2026.01.12.iso | hotfix-start.bash | [plasma] [netinstall.yaml] firewalld package split changes
 2026.01.01| EndeavourOS_Ganymede-2025.11.24.iso | hotfix-start.bash | [cinnamon] [budgie] nemo-preview removed from Cinnamon and Budgie (not on Archrepo anymore)
@@ -26,7 +27,7 @@ Hotfix date | Affected ISO | Hotfix file | Description
 2024.09.17| EndeavourOS_Endeavour-2024.06.25.iso| hotfix-start.bash | adding changes to makepkg.conf and makepkg.conf.d/
 2024.09.15| EndeavourOS_Endeavour-2024.06.25.iso| hotfix-start.bash | adding changes to pacman.conf for pacman 7 update
 2024.09.11| EndeavourOS_Endeavour-2024.06.25.iso| hotfix-start.bash | exchange mlocate with plocate (change on repo)
-2024.08.29| EndeavourOS_Endeavour-2024.06.25.iso| hotfix-start.bash | fixing non working copy paste for vmware installs 
+2024.08.29| EndeavourOS_Endeavour-2024.06.25.iso| hotfix-start.bash | fixing non working copy paste for vmware installs
 2024.08.13| EndeavourOS_Endeavour-2024.06.25.iso| hotfix-start.bash |skip xsane from /etc/calamares/modules/netinstall.yaml
 2024.08.12| EndeavourOS_Endeavour-2024.06.25.iso| hotfix-start.bash | replace bad mirror f4st.host with moson.org in /etc/calamares/scripts/update-mirrorlist
 ~~2024.07.21~~| ~~EndeavourOS_Endeavour-2024.06.25.iso~~| ~~hotfix-start.bash~~ |  ~~adding changed mirrorlist to livesession~~
