@@ -1,22 +1,38 @@
---- chrooted_cleaner_script.sh	2026-03-18 23:59:19.925492064 +0100
-+++ chrooted_cleaner_script.sh.patched	2026-03-19 00:01:25.213046618 +0100
-@@ -117,7 +117,7 @@
+--- chrooted_cleaner_script.sh	2026-03-05 00:56:37.000000000 +0100
++++ chrooted_cleaner_script.sh.patched	2026-03-19 20:33:08.329712807 +0100
+@@ -117,7 +117,6 @@
          ## Calamares EndeavourOS
          $(pacman -Qq | grep calamares)        # finds calamares related packages
          ckbcomp
--
-+
+-	
      )
-
+ 
      pacman -Rsn --noconfirm "${packages_to_remove[@]}"
-@@ -179,6 +179,10 @@
+@@ -132,7 +131,7 @@
+     if [ -r /tmp/broadcom-wl.txt ] && grep -q "^yes$" /tmp/broadcom-wl.txt; then
+         _pkg_msg info "Installing broadcom-wl package"
+ 
+-        if _is_offline_mode; then
++        if [ "$INSTALL_TYPE" != "online" ]; then
+             # Install using the copied broadcom-wl package.
+             pkg="$(/usr/bin/ls -1 $dir/broadcom-wl-*-x86_64.pkg.tar.zst 2>/dev/null | head -n1)"
+             if [ -n "$pkg" ]; then
+@@ -179,8 +178,9 @@
      # change log file permissions
      [ -r /var/log/Calamares.log ]         && chown root:root /var/log/Calamares.log
-
+ 
+-    # run possible user-given commands
+-    # _RunUserCommands     # this is in calamares directly now
 +    # fix skel issue for Titan ISO
 +    cp -rT /etc/skel/ /home/$NEW_USER/
 +    chown -R "$NEW_USER":"$NEW_USER" "/home/$NEW_USER/"
-+
-     # run possible user-given commands
-     # _RunUserCommands     # this is in calamares directly now
  }
+ 
+ _show_info_about_installed_system() {
+@@ -257,4 +257,4 @@
+ ########## SCRIPT STARTS HERE ##########
+ ########################################
+ 
+-Main "$@"
++Main "$@"
+\ No newline at end of file
