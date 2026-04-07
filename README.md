@@ -8,6 +8,7 @@ Details: see files [hotfix-start.bash](hotfix-start.bash) and [hotfix-end.bash](
 
 Hotfix date | Affected ISO | Hotfix file | Description
 :--- | :--- | :--- | :---
+2026.04.07| EndeavourOS_Titan-2026.03.06.iso | hotfix-start.bash | [xfce4] [packagechooser.conf] xfce4-datetime-plugin removed from repo
 2026.03.19| EndeavourOS_Titan-2026.03.06.iso | hotfix-start.bash | issue with eos-settings packages using skel getting installed after user creation
 2026.01.01| EndeavourOS_Ganymede_Neo-2026.01.12.iso | hotfix-start.bash | [budgie] [packagechooser.conf] Budgie 10.10 package changes
 2026.01.01| EndeavourOS_Ganymede_Neo-2026.01.12.iso | hotfix-start.bash | [plasma] [netinstall.yaml] firewalld package split changes

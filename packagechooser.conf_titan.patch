@@ -1,0 +1,10 @@
+--- packagechooser.conf	2026-04-07 17:00:16.722438647 +0200
++++ packagechooser.conf.patched	2026-04-07 17:01:05.073968104 +0200
+@@ -312,7 +312,6 @@
+             - xdg-user-dirs-gtk
+             - xfce4
+             - xfce4-battery-plugin
+-            - xfce4-datetime-plugin
+             - xfce4-mount-plugin
+             - xfce4-netload-plugin
+             - xfce4-notifyd
