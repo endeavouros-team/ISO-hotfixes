@@ -216,6 +216,8 @@ Main() {
             patch "/etc/calamares/scripts/chrooted_cleaner_script.sh" < "/tmp/chrooted_cleaner_script.sh_titan.patch"
             wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/packagechooser.conf_titan.patch"
             patch "/etc/calamares/modules/packagechooser.conf" < "/tmp/packagechooser.conf_titan.patch"
+            wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/netinstall.yaml_titan.patch"
+            patch "/etc/calamares/modules/netinstall.yaml" < "/tmp/netinstall.yaml_titan.patch"
             ;;
 
         *)
