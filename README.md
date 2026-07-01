@@ -8,30 +8,31 @@ Details: see files [hotfix-start.bash](hotfix-start.bash) and [hotfix-end.bash](
 
 Hotfix date | Affected ISO | Hotfix file | Description
 :--- | :--- | :--- | :---
-2026.04.08| EndeavourOS_Titan-2026.03.06.iso | hotfix-start.bash | [netinstall.yaml] splix package removal on "Support for printing (Cups)" option
-2026.04.07| EndeavourOS_Titan-2026.03.06.iso | hotfix-start.bash | [xfce4] [packagechooser.conf] xfce4-datetime-plugin removed from repo
-2026.03.19| EndeavourOS_Titan-2026.03.06.iso | hotfix-start.bash | issue with eos-settings packages using skel getting installed after user creation
-2026.01.01| EndeavourOS_Ganymede_Neo-2026.01.12.iso | hotfix-start.bash | [budgie] [packagechooser.conf] Budgie 10.10 package changes
-2026.01.01| EndeavourOS_Ganymede_Neo-2026.01.12.iso | hotfix-start.bash | [plasma] [netinstall.yaml] firewalld package split changes
-2026.01.01| EndeavourOS_Ganymede-2025.11.24.iso | hotfix-start.bash | [cinnamon] [budgie] nemo-preview removed from Cinnamon and Budgie (not on Archrepo anymore)
-2025.11.10| EndeavourOS_Mercury-Neo-2025.03.19.iso | hotfix-start.bash | [plasma] adding plasma-keyboard, adding python-jinja for glances
-2025.11.07| EndeavourOS_Mercury-Neo-2025.03.19.iso | hotfix-start.bash | Removed maliit-keyboard and replace libappindicator-gtk3 with libappindicator [plasma]
-2025.10.24| EndeavourOS_Mercury-Neo-2025.03.19.iso | hotfix-start.bash | removal of -gtk3 postfixes on LXDE packagenames
-2025.10.21| EndeavourOS_Mercury-Neo-2025.03.19.iso | hotfix-start.bash | gnome-screenshot removal, pacmanfm renamed
-2025.08.11| EndeavourOS_Mercury-Neo-2025.03.19.iso | hotfix-start.bash | xbacklight replaced with brightnessctl for i3-wm
-2025.06.22| EndeavourOS_Mercury-Neo-2025.03.19.iso | hotfix-start.bash | adding plasma-x11-session for plasma
-2025.05.23| EndeavourOS_Mercury-Neo-2025.03.19.iso | hotfix-start.bash | obconf replaced with lxappearance-obconf-gtk3 for LXDE
+2026.07.01 | EndeavourOS_Titan-Neo-2026.04.27.iso | hotfix-start.bash | [localcfg/main.py] xkeyboard-config 2.48-1 changes need to add values to /etc/vconsole.conf
+2026.04.08 | EndeavourOS_Titan-2026.03.06.iso | hotfix-start.bash | [netinstall.yaml] splix package removal on "Support for printing (Cups)" option
+2026.04.07 | EndeavourOS_Titan-2026.03.06.iso | hotfix-start.bash | [xfce4] [packagechooser.conf] xfce4-datetime-plugin removed from repo
+2026.03.19 | EndeavourOS_Titan-2026.03.06.iso | hotfix-start.bash | issue with eos-settings packages using skel getting installed after user creation
+2026.01.01 | EndeavourOS_Ganymede_Neo-2026.01.12.iso | hotfix-start.bash | [budgie] [packagechooser.conf] Budgie 10.10 package changes
+2026.01.01 | EndeavourOS_Ganymede_Neo-2026.01.12.iso | hotfix-start.bash | [plasma] [netinstall.yaml] firewalld package split changes
+2026.01.01 | EndeavourOS_Ganymede-2025.11.24.iso | hotfix-start.bash | [cinnamon] [budgie] nemo-preview removed from Cinnamon and Budgie (not on Archrepo anymore)
+2025.11.10 | EndeavourOS_Mercury-Neo-2025.03.19.iso | hotfix-start.bash | [plasma] adding plasma-keyboard, adding python-jinja for glances
+2025.11.07 | EndeavourOS_Mercury-Neo-2025.03.19.iso | hotfix-start.bash | Removed maliit-keyboard and replace libappindicator-gtk3 with libappindicator [plasma]
+2025.10.24 | EndeavourOS_Mercury-Neo-2025.03.19.iso | hotfix-start.bash | removal of -gtk3 postfixes on LXDE packagenames
+2025.10.21 | EndeavourOS_Mercury-Neo-2025.03.19.iso | hotfix-start.bash | gnome-screenshot removal, pacmanfm renamed
+2025.08.11 | EndeavourOS_Mercury-Neo-2025.03.19.iso | hotfix-start.bash | xbacklight replaced with brightnessctl for i3-wm
+2025.06.22 | EndeavourOS_Mercury-Neo-2025.03.19.iso | hotfix-start.bash | adding plasma-x11-session for plasma
+2025.05.23 | EndeavourOS_Mercury-Neo-2025.03.19.iso | hotfix-start.bash | obconf replaced with lxappearance-obconf-gtk3 for LXDE
 ~~2025.05.07~~| ~~EndeavourOS_Mercury-Neo-2025.03.19.iso~~ | ~~hotfix-start.bash~~ | ~~remove LTS kernel from option (Temporary // issue with Grub and encryption using LTS)~~
-2025.03.10| EndeavourOS_Mercury-2025.02.08.iso | hotfix-start.bash | fix to rank Arch mirrors
-2025.02.18| EndeavourOS_Mercury-2025.02.08.iso | hotfix-start.bash | removing xwaylandvideobridge (removed from repos upstream)
-2025.02.06| EndeavourOS_Endeavour_Neo-2024.09.22.iso| hotfix-start.bash | reiserfsprogs removed from pacstrap.conf (removed from repos upstream)
-2024.12.14| EndeavourOS_Endeavour_Neo-2024.09.22.iso| hotfix-start.bash | Endeavour_Neo 2 packages in for plasma and i3 setups
-2024.09.17| EndeavourOS_Endeavour-2024.06.25.iso| hotfix-start.bash | adding changes to makepkg.conf and makepkg.conf.d/
-2024.09.15| EndeavourOS_Endeavour-2024.06.25.iso| hotfix-start.bash | adding changes to pacman.conf for pacman 7 update
-2024.09.11| EndeavourOS_Endeavour-2024.06.25.iso| hotfix-start.bash | exchange mlocate with plocate (change on repo)
-2024.08.29| EndeavourOS_Endeavour-2024.06.25.iso| hotfix-start.bash | fixing non working copy paste for vmware installs
-2024.08.13| EndeavourOS_Endeavour-2024.06.25.iso| hotfix-start.bash |skip xsane from /etc/calamares/modules/netinstall.yaml
-2024.08.12| EndeavourOS_Endeavour-2024.06.25.iso| hotfix-start.bash | replace bad mirror f4st.host with moson.org in /etc/calamares/scripts/update-mirrorlist
+2025.03.10 | EndeavourOS_Mercury-2025.02.08.iso | hotfix-start.bash | fix to rank Arch mirrors
+2025.02.18 | EndeavourOS_Mercury-2025.02.08.iso | hotfix-start.bash | removing xwaylandvideobridge (removed from repos upstream)
+2025.02.06 | EndeavourOS_Endeavour_Neo-2024.09.22.iso| hotfix-start.bash | reiserfsprogs removed from pacstrap.conf (removed from repos upstream)
+2024.12.14 | EndeavourOS_Endeavour_Neo-2024.09.22.iso| hotfix-start.bash | Endeavour_Neo 2 packages in for plasma and i3 setups
+2024.09.17 | EndeavourOS_Endeavour-2024.06.25.iso| hotfix-start.bash | adding changes to makepkg.conf and makepkg.conf.d/
+2024.09.15 | EndeavourOS_Endeavour-2024.06.25.iso| hotfix-start.bash | adding changes to pacman.conf for pacman 7 update
+2024.09.11 | EndeavourOS_Endeavour-2024.06.25.iso| hotfix-start.bash | exchange mlocate with plocate (change on repo)
+2024.08.29 | EndeavourOS_Endeavour-2024.06.25.iso| hotfix-start.bash | fixing non working copy paste for vmware installs
+2024.08.13 | EndeavourOS_Endeavour-2024.06.25.iso| hotfix-start.bash |skip xsane from /etc/calamares/modules/netinstall.yaml
+2024.08.12 | EndeavourOS_Endeavour-2024.06.25.iso| hotfix-start.bash | replace bad mirror f4st.host with moson.org in /etc/calamares/scripts/update-mirrorlist
 ~~2024.07.21~~| ~~EndeavourOS_Endeavour-2024.06.25.iso~~| ~~hotfix-start.bash~~ |  ~~adding changed mirrorlist to livesession~~
 2024.07.14 | EndeavourOS_Endeavour-2024.06.25.iso| hotfix-start.bash | Move fstab after lukskeyfile job so crypttab is correct [settings_online.conf] [settings_offline.conf]
 2024.06.19 | EndeavourOS_Gemini-2024.04.20.iso | hotfix-start.bash | Gnome nautilus-send removed from repo [packagechooser.conf]

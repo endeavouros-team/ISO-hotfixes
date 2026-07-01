@@ -220,6 +220,13 @@ Main() {
             patch "/etc/calamares/modules/netinstall.yaml" < "/tmp/netinstall.yaml_titan.patch"
             ;;
 
+        2026.04.27) # Titan_neo
+            # xkeyboard-config 2.48-1 changes need to add values to /etc/vconsole.conf
+
+            wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/main.py_titan_neo.patch"
+            patch "/usr/lib/calamares/modules/localecfg/main.py" < "/tmp/main.py_titan_neo.patch"
+            ;;
+
         *)
             HotMsg "no hotfixes for ISO version $ISO_VERSION."
             ;;
