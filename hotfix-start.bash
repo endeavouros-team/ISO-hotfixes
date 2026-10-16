@@ -230,6 +230,17 @@ Main() {
         *)
             HotMsg "no hotfixes for ISO version $ISO_VERSION."
             ;;
+
+        2026.08.15) # Titan_nova
+            # [packagechooser.conf] KDE/plasma removing X11 session
+
+            wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/packagechooser.conf_titan_nova.patch"
+            patch "/etc/calamares/modules/packagechooser.conf" < "/tmp/packagechooser.conf_titan_nova.patch"
+            ;;
+
+        *)
+            HotMsg "no hotfixes for ISO version $ISO_VERSION."
+            ;;
     esac
 }
 
