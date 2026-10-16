@@ -1,0 +1,18 @@
+--- packagechooser.conf	2026-08-15 16:09:48.000000000 +0200
++++ packagechooser.conf.patched	2026-10-17 00:10:07.599136162 +0200
+@@ -129,7 +129,6 @@
+             - kdegraphics-thumbnailers
+             - kdenetwork-filesharing
+             - kdeplasma-addons
+-            - kgamma
+             - kimageformats
+             - kinfocenter
+             - kio-admin
+@@ -151,7 +150,6 @@
+             - plasma-pa
+             - plasma-systemmonitor
+             - plasma-workspace
+-            - plasma-x11-session
+             - powerdevil
+             - print-manager
+             - qt6-imageformats
