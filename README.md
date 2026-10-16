@@ -9,7 +9,7 @@ Details: see files [hotfix-start.bash](hotfix-start.bash) and [hotfix-end.bash](
 Hotfix date | Affected ISO | Hotfix file | Description
 :--- | :--- | :--- | :---
 2026.17.10 | EndeavourOS_Titan-Nova-2026.08.15.iso | hotfix-start.bash | [packagechooser.conf] KDE/plasma removing X11 session
-2026.07.01 	EndeavourOS_Titan-Neo-2026.04.27.iso 	hotfix-start.bash 	[localcfg/main.py] xkeyboard-config 2.48-1 changes need to add values to /etc/vconsole.conf
+2026.07.01 | EndeavourOS_Titan-Neo-2026.04.27.iso | hotfix-start.bash | [localcfg/main.py] xkeyboard-config 2.48-1 changes need to add values to /etc/vconsole.conf
 2026.04.08 | EndeavourOS_Titan-2026.03.06.iso | hotfix-start.bash | [netinstall.yaml] splix package removal on "Support for printing (Cups)" option
 2026.04.07 | EndeavourOS_Titan-2026.03.06.iso | hotfix-start.bash | [xfce4] [packagechooser.conf] xfce4-datetime-plugin removed from repo
 2026.03.19 | EndeavourOS_Titan-2026.03.06.iso | hotfix-start.bash | issue with eos-settings packages using skel getting installed after user creation
