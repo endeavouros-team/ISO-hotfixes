@@ -227,10 +227,6 @@ Main() {
             patch "/usr/lib/calamares/modules/localecfg/main.py" < "/tmp/main.py_titan_neo.patch"
             ;;
 
-        *)
-            HotMsg "no hotfixes for ISO version $ISO_VERSION."
-            ;;
-
         2026.08.15) # Titan_nova
             # [packagechooser.conf] KDE/plasma removing X11 session
 
